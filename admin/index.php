@@ -12,6 +12,7 @@ if (isset($_SESSION['id_admin'])) {
 <html>
 
 <head>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Placement Portal</title>
@@ -42,26 +43,50 @@ if (isset($_SESSION['id_admin'])) {
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body class="hold-transition login-page bg-blue-300 text-white">
-  <header>
+<body class="hold-transition login-page bg-blue-400 text-white">
 
-    <?php
-    include '../uploads/admin_header.php';
-    ?>
 
-  </header>
+  <?php
+  include '../uploads/admin_header.php';
+  ?>
+
+
   <div class="login-box">
     <div class="login-logo">
       <a class="color-black" href="../index.php">Placement Portal</a>
     </div>
     <!-- /.login-logo -->
-    <div class="bg-gray-700 text-white login-box-body large">
+    <div class="bg-gray-800 text-white login-box-body large">
       <p class="login-box-msg mt-7">Admin Login</p>
       <style>
         .large {
           width: 350px;
           height: 300px;
         }
+
+        .small {
+          font-size: small;
+        }
+
+        #footer {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 60px;
+          /* Height of the footer */
+
+        }
+
+        @media only screen and (max-width: 768px) {
+          .large {
+            margin: auto;
+
+          }
+
+          .small {
+
+            position: absolute;
+          }
       </style>
 
       <form action="checklogin.php" method="post">
@@ -97,11 +122,30 @@ if (isset($_SESSION['id_admin'])) {
     <!-- /.login-box-body -->
   </div>
 
-  <div style="margin: bottom 0px;">
-    <?php
 
-    include '../php/footer.php';
-    ?>
+
+  <div style="margin: bottom 0px; " class="  sm:mt-48">
+    <footer id="footer" class="text-gray-600 body-font bg-gray-800 small mb-0 ">
+
+      <div class="pt-1 pb-2">
+        <ul class="flex  space-x-16 justify-center text-white my-4 ">
+
+          <li><i class="fa fa-copyright" aria-hidden="true"></i>Placement Portal @ 2022</li>
+          <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+          <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+          <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
+          <li><i class="fa fa-linkedin" aria-hidden="true"></i></li>
+
+        </ul>
+
+
+
+
+
+      </div>
+
+
+    </footer>
 
 
 
@@ -110,7 +154,7 @@ if (isset($_SESSION['id_admin'])) {
 
 
   <!-- jQuery 3 -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- Bootstrap 3.3.7 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!-- AdminLTE App -->

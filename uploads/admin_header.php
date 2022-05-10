@@ -50,7 +50,7 @@
     }
 
     .header {
-        border-bottom: 1px solid #E2E8F0;
+        /* border-bottom: 1px solid #E2E8F0; */
     }
 
     .navbar {
@@ -58,7 +58,8 @@
         justify-content: space-between;
         align-items: center;
         padding: 1rem 1.5rem;
-        background-color: #114f5e;
+        /* background-color: #114f5e; */
+        background-color: #101a1d;
     }
 
     .hamburger {

@@ -83,7 +83,7 @@ require_once("../db.php");
                     <table id="example2" class="table table-hover">
                       <thead>
                         <th>Drive Name</th>
-                        <th>Company Name</th>
+                        <!-- <th>Company Name</th> -->
                         <th>Date Created</th>
                         <th>View</th>
                         <th>Delete</th>
@@ -98,12 +98,14 @@ require_once("../db.php");
                         ?>
                             <tr>
                               <td><?php echo $row['jobtitle']; ?></td>
-                              <td><?php echo $row['companyname']; ?></td>
+
                               <td><?php echo date("d-M-Y", strtotime($row['createdat'])); ?></td>
                               <td><a href="view-job-post.php?id=<?php echo $row['id_jobpost']; ?>"><i class="fa fa-address-card-o"></i></a></td>
                               <td><a href="delete-job-post.php?id=<?php echo $row['id_jobpost']; ?>"><i class="fa fa-trash"></i></a></td>
                             </tr>
                         <?php
+
+                            // $_SESSION['id_jobpost'] = $row['id_jobpost'];
                           }
                         }
                         ?>

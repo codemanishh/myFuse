@@ -66,9 +66,12 @@ if ($result1->num_rows > 0) {
       <section id="candidates" class="content-header">
         <div class="container">
           <div class="row">
-            <div class="col-md-9 bg-white padding-2">
+            <div class=" col-md-2">
+
+            </div>
+            <div class="col-md-8 bg-white padding-2">
               <div class="pull-left">
-                <h2><b><i><?php echo $row['jobtitle']; ?></i></b></h2>
+                <h2><b><?php echo $row['jobtitle']; ?></b></h2>
               </div>
               <div class="pull-right">
                 <a href="active-jobs.php" class="btn btn-default btn-lg btn-flat margin-top-20"><i class="fa fa-arrow-circle-left"></i> Back</a>
@@ -76,27 +79,26 @@ if ($result1->num_rows > 0) {
               <div class="clearfix"></div>
               <hr>
               <div>
-                <p><span class="margin-right-10"><i class="fa fa-location-arrow text-green"></i> <?php echo $row['city']; ?></span> <i class="fa fa-calendar text-green"></i> <?php echo date("d-M-Y", strtotime($row['createdat'])); ?></p>
+                <p><span class="margin-right-10"><i class="fa fa-location-arrow text-green"> Role: </i> <?php echo $row['experience']; ?> </span><span class="margin-right-10"> <i class="fa fa-money text-green"> CTC:</i> <?php echo "Rs " . $row['minimumsalary'] . "    "; ?></span> <span class="margin-right-10"><i class="fa fa-calendar text-green"> Drive Date:</i> <?php echo date("d-M-Y", strtotime($row['createdat'])); ?></span><span class="margin-right-10"><i class="fa fa-location-calendar text-green"> Eligibility: </i> <?php echo $row['maximumsalary'] . "%"; ?> </span></p>
+                <!-- Years Experience -->
               </div>
               <div>
                 <?php echo stripcslashes($row['description']); ?>
               </div>
-
+              <div class="pull-right">
+                <a style="margin-left:2px" href="updatedrive.php?id=<?php echo $row['id_jobpost']; ?>" class="btn btn-default btn-lg btn-flat margin-top-20"><i class="fa fa-arrow-circle-lef" "></i> Update Drive</a>
+                      </div>
 
             </div>
-            <div class="col-md-3">
-              <div class="thumbnail">
-                <img src="../uploads/logo/<?php echo $row['logo']; ?>" alt="companylogo">
-                <div class="caption text-center">
-                  <h3><?php echo $row['companyname']; ?></h3>
-                  <hr>
-                </div>
+            <div class=" col-md-2">
+
               </div>
             </div>
           </div>
-        </div>
       </section>
-
+      <?php
+      $_SESSION['id_jobpost'] = $row['id_jobpost'];
+      ?>
 
 
     </div>

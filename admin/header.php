@@ -7,7 +7,7 @@
                 <a href="index.php" class="nav-link">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a href="companies.php" class="nav-link">Co-ordinators</a>
+                <a href="database.php" class="nav-link">Database</a>
             </li>
 
             <li class="nav-item">
