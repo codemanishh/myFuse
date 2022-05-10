@@ -42,7 +42,7 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
   ?>
 </head>
 
-<body class="hold-transition login-page bg-blue-400 text-white">
+<body class="hold-transition login-page bg-blue-200 text-white">
 
 
   <?php

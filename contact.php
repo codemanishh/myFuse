@@ -77,7 +77,7 @@
 
                     <div class="info">
                         <h3>Get in touch</h3>
-                        <p>Placement Cell.</p>
+                        <p>PlACEMENT CELL</p>
 
                         <div class="info-item d-flex">
                             <i class="bi bi-geo-alt flex-shrink-0"></i>

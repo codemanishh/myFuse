@@ -49,7 +49,7 @@
     }
 
     .header {
-        border-bottom: 1px solid #E2E8F0;
+        border-bottom: 0px solid #E2E8F0;
     }
 
     .navbar {

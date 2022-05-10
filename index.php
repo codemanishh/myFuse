@@ -155,7 +155,7 @@ require_once("db.php");
                         <div class="row gy-4">
                             <div class="col-lg-8 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
                                 <h3>Objectives</h3>
-                                <p class="fst-italic">
+                                <p class="fst-itali">
                                     Our Placement Portal serves various objectives:
                                 </p>
                                 <ul>
@@ -167,10 +167,8 @@ require_once("db.php");
                                     <li><i class="bi bi-check-circle-fill"></i> To produce world-class professionals who have excellent analytical skills,
                                         communication skills, team building spirit and ability to work in cross cultural
                                         environment.</li>
+
                                 </ul>
-                                <p>Aiming to Place the maximum number of students through campus & off-campus
-                                    interviews conducted by the top companies.
-                                </p>
                             </div>
                             <div class="col-lg-4 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
                                 <img src="assets/img/features-1.svg" alt="" class="img-fluid">

@@ -43,7 +43,7 @@ if (isset($_SESSION['id_admin'])) {
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body class="hold-transition login-page bg-blue-400 text-white">
+<body class="hold-transition login-page bg-blue-200 text-white">
 
 
   <?php
