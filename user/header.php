@@ -166,3 +166,7 @@
         navMenu.classList.toggle("active");
     }
 </script>
+
+<script src="../js/sweetalert.js">
+
+</script>

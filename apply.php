@@ -34,16 +34,19 @@ if (isset($_GET)) {
 		$course2 = $row['qualification'];
 	}
 
+	// for checking the eligibility & course criteria 
 
 	if ($total >= $eligibility) {
 		if ($course1 == $course2) {
 
-			//Check if user has applied to job post or not. If not then add his details to apply_job_post table.
+			// 1. Check if user has already applied for the Drive post or not. If not then add his details to apply_job_post table.
 			$sql1 = "SELECT * FROM apply_job_post WHERE id_user='$_SESSION[id_user]' AND id_jobpost='$_GET[id]'";
 			$result1 = $conn->query($sql1);
 			// echo $result1->num_rows;
 			// echo $_SESSION['id_user'];
 			// echo $row['id_jobpost'];
+
+			// 2. if not then applying for the job post 
 			if ($result1->num_rows == 0) {
 
 				$sql4 = "select C.id_company from job_post AS SJ inner join company AS C on SJ.id_company=C.id_company where id_jobpost = '$_GET[id]'";
@@ -54,34 +57,37 @@ if (isset($_GET)) {
 				if ($conn->query($sql) === TRUE) {
 					$_SESSION['jobApplySuccess'] = true;
 					header("Location: user/index.php");
+					$_SESSION['status1'] = "Congrats!";
+					$_SESSION['status_code1'] = "success";
 					exit();
 				} else {
 					echo "Error " . $sql . "<br>" . $conn->error;
 				}
 
 				$conn->close();
-			} else {
-				echo "
-				<script>
-				alert('You have already applied for this Drive.'); 
-				document.location='jobs.php'
-				</script>";
-				// header("Location: jobs.php");
+			}
+			// 3. if already applied for the drive the notfiy him 
+			else {
+
+				header("Location: view-job-post.php?id=$_GET[id]");
+				$_SESSION['status'] = "You have already applied for this Drive.";
+				$_SESSION['status_code'] = "success";
+
 
 				exit();
 			}
+		} else {
+
+			header("Location: view-job-post.php?id=$_GET[id]");
+			$_SESSION['status'] = "You are not eligible for this drive due to the course criteria.";
+			$_SESSION['status_code'] = "success";
 		}
-		echo "
-				<script>
-				alert('You are not eligible for this drive due to the course criteria.'); 
-				document.location='jobs.php'
-				</script>";
 	} else {
-		echo "
-				<script>
-				alert('You are not eligible for this drive due to the overall marks criteria.'); 
-				document.location='jobs.php'
-				</script>";
+
+
+		header("Location: view-job-post.php?id=$_GET[id]");
+		$_SESSION['status'] = "You are not eligible for this drive due to the overall percentage criteria.";
+		$_SESSION['status_code'] = "success";
 	}
 }
 

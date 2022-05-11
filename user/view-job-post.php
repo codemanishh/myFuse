@@ -34,6 +34,7 @@ if ($result->num_rows > 0) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Placement Portal</title>
   <!-- Tell the browser to be responsive to screen width -->
+  <link href="../img/logo.png" rel="icon">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
@@ -123,6 +124,10 @@ if ($result->num_rows > 0) {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!-- AdminLTE App -->
   <script src="../js/adminlte.min.js"></script>
+  <script src="../js/sweetalert.js">
+
+  </script>
+  </script>
 </body>
 
 </html>

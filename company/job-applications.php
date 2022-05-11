@@ -77,7 +77,13 @@ require_once("../db.php");
               </div>
             </div>
             <div class="col-md-9 bg-white padding-2">
-              <h2><i>Recent Applications</i></h2>
+              <h2>Recent Applications</h2>
+              <div class="input-group input-group-lg">
+                <input type="text" id="searchBar" class="form-control" placeholder="Search Students">
+                <span class="input-group-btn">
+                  <button id="searchBtn" type="button" class="btn btn-info btn-flat">Go!</button>
+                </span>
+              </div>
 
               <?php
 

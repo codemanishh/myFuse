@@ -166,3 +166,27 @@ require_once("../db.php");
     }
   }
 </style>
+
+
+<script src="../js/sweetalert.js"></script>
+
+<?php
+if (isset($_SESSION['status1'])  && $_SESSION['status1'] != '') {
+
+?>
+
+  <script>
+    swal({
+      title: "<?php echo $_SESSION['status1']; ?>",
+      text: " You have successfully applied for the drive.",
+      icon: "<?php echo $_SESSION['status_code1']; ?>",
+      button: "Okay",
+    });
+  </script>
+
+<?php
+
+  unset($_SESSION['status1']);
+}
+
+?>

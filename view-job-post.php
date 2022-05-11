@@ -42,7 +42,7 @@ require_once("db.php");
   <div class="wrapper">
 
     <?php
-    include 'user/header.php'
+    include 'uploads/jobs_header.php'
     ?>
 
 
@@ -129,9 +129,20 @@ require_once("db.php");
 
 </html>
 
-<script>
-  function reallyfunction() {
+<script src="js/sweetalert.js"></script>
 
-    confirm(" Are you sure, you want to apply?")
-  }
-</script>
+<?php
+if (isset($_SESSION['status'])  && $_SESSION['status'] != '') {
+
+?>
+
+  <script>
+    swal("<?php echo $_SESSION['status'];  ?>");
+  </script>
+
+<?php
+
+  unset($_SESSION['status']);
+}
+
+?>
