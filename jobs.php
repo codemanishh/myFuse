@@ -51,8 +51,16 @@ require_once("db.php");
       <section class="content-header">
         <div class="container">
           <div class="row">
-            <div class="col-md-12 latest-job margin-top-50 margin-bottom-20">
-              <h1 class="text-center">Active Drives</h1>
+            <div class="col-md-1"></div>
+            <div class="col-md-10 latest-job margin-top-50 margin-bottom-20 large">
+              <style>
+                .large {
+
+                  margin: auto;
+                  margin-bottom: 20px;
+                }
+              </style>
+              <h2 class="text-center">Active Drives</h2>
               <div class="input-group input-group-lg">
                 <input type="text" id="searchBar" class="form-control" placeholder="Search job">
                 <span class="input-group-btn">
@@ -60,6 +68,7 @@ require_once("db.php");
                 </span>
               </div>
             </div>
+            <div class="col-md-1"></div>
           </div>
         </div>
       </section>
@@ -67,35 +76,10 @@ require_once("db.php");
       <section id="candidates" class="content-header">
         <div class="container">
           <div class="row">
-            <div class="col-md-3">
-              <div class="box box-solid">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Filters</h3>
-                </div>
-                <div class="box-body no-padding">
-                  <ul class="nav nav-pills nav-stacked tree" data-widget="tree">
-                    <li class="treeview menu-open">
-                      <a href="#"><i class="fa fa-plane text-red"></i> City <span class="pull-right"><i class="fa fa-angle-down pull-right"></i></span></a>
-                      <ul class="treeview-menu">
-                        <li><a href="" class="citySearch" data-target="Delhi"><i class="fa fa-circle-o text-yellow"></i> Delhi</a></li>
-                        <li><a href="" class="citySearch" data-target="Kouba"><i class="fa fa-circle-o text-yellow"></i> Kouba</a></li>
-                      </ul>
-                    </li>
-                    <li class="treeview menu-open">
-                      <a href="#"><i class="fa fa-plane text-red"></i> Experience <span class="pull-right"><i class="fa fa-angle-down pull-right"></i></span></a>
-                      <ul class="treeview-menu">
-                        <li><a href="" class="experienceSearch" data-target='1'><i class="fa fa-circle-o text-yellow"></i> > 1 Years</a></li>
-                        <li><a href="" class="experienceSearch" data-target='2'><i class="fa fa-circle-o text-yellow"></i> > 2 Years</a></li>
-                        <li><a href="" class="experienceSearch" data-target='3'><i class="fa fa-circle-o text-yellow"></i> > 3 Years</a></li>
-                        <li><a href="" class="experienceSearch" data-target='4'><i class="fa fa-circle-o text-yellow"></i> > 4 Years</a></li>
-                        <li><a href="" class="experienceSearch" data-target='5'><i class="fa fa-circle-o text-yellow"></i> > 5 Years</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+            <div class="col-md-1">
             </div>
-            <div class="col-md-9">
+
+            <div class="col-md-10">
 
               <?php
 
@@ -123,6 +107,8 @@ require_once("db.php");
 
 
 
+            </div>
+            <div class="col-md-1">
             </div>
           </div>
         </div>

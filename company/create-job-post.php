@@ -111,6 +111,13 @@ require_once("../db.php");
                     <div class="form-group">
                       <input type="text" class="form-control  input-lg" id="qualification" name="qualification" placeholder="Qualification Required" required="">
                     </div>
+
+
+                    <!-- adding image to drive post  -->
+
+
+
+
                     <div class="form-group">
                       <button type="submit" class="btn btn-flat btn-success">Create</button>
                     </div>

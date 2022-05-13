@@ -25,7 +25,12 @@ if ($result->num_rows > 0) {
 ?>
 
         <div class="attachment-block clearfix">
-          <img class="attachment-img" src="uploads/logo/<?php echo $row1['logo']; ?>" alt="Attachment Image">
+          <img class="attachment-img" src="uploads/logo/<?php
+                                                        echo $row1['logo'];
+                                                        ?>" alt="Attachment Image">
+
+          <!-- logo k baad niche wala text aaeyga  -->
+
           <div class="attachment-pushed">
             <h4 class="attachment-heading"><a href="view-job-post.php?id=<?php echo $row['id_jobpost']; ?>"><?php echo $row['jobtitle']; ?></a> <span class="attachment-heading pull-right">₹<?php echo $row['minimumsalary']; ?>/Year</span></h4>
             <div class="attachment-text">

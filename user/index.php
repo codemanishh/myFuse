@@ -76,6 +76,11 @@ require_once("../db.php");
               </div>
             </div>
             <div class="col-md-9 bg-white padding-2">
+              <div class="alert alert-info alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <i class="icon fa fa-info"></i> Update your profile, if you are a new user.
+              </div>
+
               <h2>Applied Drives</h2>
               <p>Below you will find job roles you have applied for</p>
 

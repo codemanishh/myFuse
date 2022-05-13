@@ -56,12 +56,12 @@ require_once("../db.php");
             <section id="candidates" class="content-header">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-2 ">
+                        <div class="col-md-1 ">
 
 
 
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                             <h3 style="text-align: center;"> Student applications for various companies</h3>
                             <?php
 
@@ -108,11 +108,14 @@ require_once("../db.php");
                                         <div class="box-body table-responsive no-padding">
                                             <table id="example2" class="table table-hover">
                                                 <thead>
-                                                    <th>Candidate</th>
+                                                    <th>Student Name</th>
                                                     <th>Highest Qualification</th>
                                                     <th>Skills</th>
                                                     <th>City</th>
                                                     <th>State</th>
+                                                    <th>Contact No.</th>
+                                                    <th>Email</th>
+
                                                     <th>HSC</th>
                                                     <th>SSC</th>
                                                     <th>UG</th>
@@ -154,6 +157,8 @@ require_once("../db.php");
                                                                         </td>
                                                                         <td><?php echo $row['city']; ?></td>
                                                                         <td><?php echo $row['state']; ?></td>
+                                                                        <td><?php echo $row['contactno']; ?></td>
+                                                                        <td><?php echo $row['email']; ?></td>
 
                                                                         <td><?php echo $row['hsc']; ?></td>
                                                                         <td><?php echo $row['ssc']; ?></td>
@@ -164,35 +169,50 @@ require_once("../db.php");
                                                                     </tr>
 
 
-                                                <?php
+                                                    <?php
 
                                                                 }
                                                             }
                                                         }
-                                                    }
-                                                }
-                                                ?>
+                                                    } ?>
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
                                 </div>
 
+                                <form method="POST" action=""></form>
+                                <button type="submit1" name='export_excel_btn' class=btn btn-info mt-12">Export to excel file</button>
+                                </form>
+
+                            <?php
+
+                            }
+                            ?>
                         </div>
 
 
 
 
+                        <?php
+
+
+
+                        ?>
+
+
+
+
 
 
 
 
                     </div>
-                    <div class="col-md-2 ">
+                    <!-- <div class="col-md-2 ">
 
 
 
-                    </div>
+                    </div> -->
                 </div>
         </div>
         </section>

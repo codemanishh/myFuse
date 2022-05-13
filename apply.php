@@ -14,6 +14,8 @@ require_once("db.php");
 //If user Actually clicked apply button
 if (isset($_GET)) {
 
+
+
 	$sql = "SELECT * from users WHERE id_user='$_SESSION[id_user]' ";
 	$result1 = $conn->query($sql);
 
@@ -39,15 +41,14 @@ if (isset($_GET)) {
 	if ($total >= $eligibility) {
 		if ($course1 == $course2) {
 
+
 			// 1. Check if user has already applied for the Drive post or not. If not then add his details to apply_job_post table.
 			$sql1 = "SELECT * FROM apply_job_post WHERE id_user='$_SESSION[id_user]' AND id_jobpost='$_GET[id]'";
 			$result1 = $conn->query($sql1);
-			// echo $result1->num_rows;
-			// echo $_SESSION['id_user'];
-			// echo $row['id_jobpost'];
-
 			// 2. if not then applying for the job post 
 			if ($result1->num_rows == 0) {
+
+				// $_SESSION['status_code2'] = "success";
 
 				$sql4 = "select C.id_company from job_post AS SJ inner join company AS C on SJ.id_company=C.id_company where id_jobpost = '$_GET[id]'";
 
@@ -55,6 +56,7 @@ if (isset($_GET)) {
 				$sql = "INSERT INTO apply_job_post(id_jobpost, id_company, id_user) VALUES ('$_GET[id]', '$_SESSION[id_company]', '$_SESSION[id_user]')";
 
 				if ($conn->query($sql) === TRUE) {
+
 					$_SESSION['jobApplySuccess'] = true;
 					header("Location: user/index.php");
 					$_SESSION['status1'] = "Congrats!";
@@ -66,7 +68,7 @@ if (isset($_GET)) {
 
 				$conn->close();
 			}
-			// 3. if already applied for the drive the notfiy him 
+			// 3. if already applied for the drive then notfiy him 
 			else {
 
 				header("Location: view-job-post.php?id=$_GET[id]");
@@ -89,10 +91,6 @@ if (isset($_GET)) {
 		$_SESSION['status'] = "You are not eligible for this drive due to the overall percentage criteria. Update your marks in your profile, if you think you are eligible.";
 		$_SESSION['status_code'] = "success";
 	}
+} else {
+	header("Location: user/index.php");
 }
-
-
-//  else {
-// 	header("Location: jobs.php");
-// 	exit();
-// }
