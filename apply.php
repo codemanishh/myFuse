@@ -86,7 +86,7 @@ if (isset($_GET)) {
 
 
 		header("Location: view-job-post.php?id=$_GET[id]");
-		$_SESSION['status'] = "You are not eligible for this drive due to the overall percentage criteria.";
+		$_SESSION['status'] = "You are not eligible for this drive due to the overall percentage criteria. Update your marks in your profile, if you think you are eligible.";
 		$_SESSION['status_code'] = "success";
 	}
 }

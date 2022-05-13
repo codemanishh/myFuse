@@ -67,7 +67,7 @@ if (isset($_POST['submit'])) {
 
 
     <div class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-6 responsive">
             <section>
                 <div class="alert alert-success alert-dismissible" style="display: none;" id="truemsg">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -88,12 +88,12 @@ if (isset($_POST['submit'])) {
                         <textarea style="top:80px " type="input" class="input" name="input" id="input" placeholder="Notice" required></textarea>
                     </div>
 
-                    <div class="form-group text-center">
+                    <div class="form-group text-center option">
                         <label>Audience </label>
                         <select class="form-control select2 select2-hidden-accessible" style="width: 100%" tabindex="-1" aria-hidden="true" class="input" name="audience">
 
-                            <option value="All Students">All Students</option>
-                            <option value="Co-ordinators">Co-ordinators</option>
+                            <option class="option" value="All Students">All Students</option>
+                            <option class="option" value="Co-ordinators">Co-ordinators</option>
 
 
                         </select>
@@ -114,10 +114,10 @@ if (isset($_POST['submit'])) {
 
 
 
-        <div class="col-xs-5">
+        <div class="col-xs-5 responsive2 ">
 
 
-            <div class="box box-primary">
+            <div class="box box-primary ">
                 <div class="box-header with-border">
                     <h3 class="box-title">Posted Notice</h3>
                 </div>
@@ -181,9 +181,11 @@ if (isset($_POST['submit'])) {
     </div>
 
 
-    <footer style="background-color:#021e36; color:aliceblue; padding: 12px" class="main-footer" style="margin-left: 0px;">
-        <div class="text-center mb-0">
-            <strong>Copyright &copy; 2022 <a>Placement Portal</a>.</strong> All rights
+    <footer class="main-footer" style="margin:auto;margin-bottom: 0px; padding:15px;
+  width: 100%;
+  height: 50px; position:absolute; background-color:#1f0a0a; color:white">
+        <div class="text-center">
+            <strong>Copyright &copy; 2022 Placement Portal</strong> All rights
             reserved.
         </div>
     </footer>
@@ -208,7 +210,8 @@ if (isset($_POST['submit'])) {
         width: 700px;
         border: 2px solid black;
         border-radius: 10px;
-        display: inline-grid;
+        /* display: inline-grid; */
+        display: inline-block;
 
 
     }
@@ -218,6 +221,11 @@ if (isset($_POST['submit'])) {
         width: 86%;
 
 
+    }
+
+    .option {
+        width: 30%;
+        margin: auto;
     }
 
     .input {
@@ -247,16 +255,49 @@ if (isset($_POST['submit'])) {
         margin: 0px 10px 0px 10px;
     }
 
-    @media screen and (max-width: 903px) {
+    @media screen and (max-width: 1447px) {
 
         .input1 {
-            width: 70%;
-            height: 80%;
+            width: auto;
+            height: auto;
         }
 
         .centre {
-            width: 100%;
-            height: 80%;
+
+            height: 105%;
+            width: 105%;
+            margin-left: 100px;
+
         }
+
+        .responsive2 {
+            margin: auto;
+            display: block;
+            height: 80%;
+            width: 80%;
+            margin: auto;
+        }
+
+        #subject {
+            height: 60%;
+            width: 60%;
+            margin: auto;
+
+        }
+
+        .option {
+            height: 60%;
+            width: 60%;
+            margin: auto;
+        }
+
+        .input {
+            height: 80%;
+            width: 60%;
+            margin: auto;
+
+        }
+
+
     }
 </style>

@@ -39,7 +39,7 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body class="hold-transition login-page bg-blue-200 text-white">
+<body class="hold-transition login-page bg-blue-100 text-white">
 
 
   <!-- <header> -->
@@ -55,14 +55,14 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
 
 
   <!-- </header> -->
-  <div class="login-box">
+  <div class="login-box hello">
     <div class="login-logo ">
 
       <a href="index.php" style="color:black"><b>Placement Portal</b></a>
     </div>
     <!-- /.login-logo -->
-    <div class="login-box-body bg-gray-800 text-white">
-      <p class="login-box-msg text-2xl text-white">Student Login</p>
+    <div class="login-box-body bg-blue-200 text-black ">
+      <p class="login-box-msg text-2xl text-black">Student Login</p>
 
       <form method="post" action="checklogin.php " class="text-xl">
         <div class="form-group has-feedback">
@@ -76,6 +76,8 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
         <style>
           #large {
             font-size: medium;
+
+
           }
         </style>
         <div class="row ">

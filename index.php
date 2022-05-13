@@ -206,7 +206,7 @@ require_once("db.php");
                                                 <?php echo $totalno; ?>
                                             </h3>
 
-                                            <p>Job Offers</p>
+                                            <p>Total Drives</p>
                                         </div>
                                         <div class="icon">
                                             <i class="ion ion-ios-paper"></i>
@@ -231,7 +231,7 @@ require_once("db.php");
                                                 <?php echo $totalno; ?>
                                             </h3>
 
-                                            <p>Registered Company</p>
+                                            <p>Job Offers</p>
                                         </div>
                                         <div class="icon">
                                             <i class="ion ion-briefcase"></i>

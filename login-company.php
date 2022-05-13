@@ -42,7 +42,7 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
   ?>
 </head>
 
-<body class="hold-transition login-page bg-blue-200 text-white">
+<body class="hold-transition login-page bg-blue-100 text-white">
 
 
   <?php
@@ -56,8 +56,8 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
       <a href="index.php" style="color:black"><b>Placement Portal</b></a>
     </div>
     <!-- /.login-logo -->
-    <div class=" login-box-body bg-gray-800 text-white text-xl">
-      <p class="text-white text-2xl login-box-msg ">Placement Cell - Login</p>
+    <div class=" login-box-body bg-blue-200 text-black text-xl">
+      <p class="text-white text-2xl login-box-msg text-black">Placement Cell</p>
 
       <form method="post" action="checkcompanylogin.php">
         <div class="form-group has-feedback">
