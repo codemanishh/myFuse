@@ -56,11 +56,10 @@ require_once("../db.php");
             <section id="candidates" class="content-header">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-1 ">
+                        <button type="submit1" name='export_excel_btn' class="btn btn-primary">Export to Excel</button>
 
+                        <button type="submit1" onclick="sortTable()" name='export_excel_btn' style="margin-left: 8px;" class="btn btn-success">Sort Data</button>
 
-
-                        </div>
                         <div class="col-md-12">
                             <h3 style="text-align: center;"> Student applications for various companies</h3>
                             <?php
@@ -86,136 +85,140 @@ require_once("../db.php");
                                         }
                                         ?>
                                     </select>
-                                    <input name="submit" type="submit" value="submit">
+                                    <input name="submit" type="submit" value="Submit">
+                                    <form method="POST" action=""></form>
 
-                                </div>
 
                             </form>
 
-                            <?php
-
-                            if (isset($_POST['submit'])) {
-
-
-                                $option = mysqli_real_escape_string($conn, $_POST['company']);
-
-                                // echo $_SESSION['option'];
-
-                            ?>
-                                <h3>Drive Applications</h3>
-                                <div class="row margin-top-20">
-                                    <div class="col-md-12">
-                                        <div class="box-body table-responsive no-padding">
-                                            <table id="example2" class="table table-hover">
-                                                <thead>
-                                                    <th>Student Name</th>
-                                                    <th>Highest Qualification</th>
-                                                    <th>Skills</th>
-                                                    <th>City</th>
-                                                    <th>State</th>
-                                                    <th>Contact No.</th>
-                                                    <th>Email</th>
-
-                                                    <th>HSC</th>
-                                                    <th>SSC</th>
-                                                    <th>UG</th>
-                                                    <th>PG</th>
-
-                                                </thead>
-                                                <tbody>
-                                                    <?php
-                                                    // selecting student record via option 
-
-                                                    $sql2 = "select id_jobpost from job_post where jobtitle = '$option'";
-                                                    $result2 = $conn->query($sql2);
-
-                                                    if ($result2->num_rows > 0) {
-                                                        while ($row2 = $result2->fetch_assoc()) {
-                                                            $jobid = $row2['id_jobpost'];
-
-
-
-                                                            $sql = "select * from users inner join apply_job_post on users.id_user = apply_job_post.id_user where id_jobpost = '$jobid' ";
-                                                            $result = $conn->query($sql);
-
-                                                            if ($result->num_rows > 0) {
-
-                                                                while ($row = $result->fetch_assoc()) {
-
-                                                                    $skills = $row['skills'];
-                                                                    $skills = explode(',', $skills);
-                                                    ?>
-                                                                    <tr>
-                                                                        <td><?php echo $row['firstname'] . ' ' . $row['lastname']; ?></td>
-                                                                        <td><?php echo $row['qualification']; ?></td>
-                                                                        <td>
-                                                                            <?php
-                                                                            foreach ($skills as $value) {
-                                                                                echo ' <span class="label label-success">' . $value . '</span>';
-                                                                            }
-                                                                            ?>
-                                                                        </td>
-                                                                        <td><?php echo $row['city']; ?></td>
-                                                                        <td><?php echo $row['state']; ?></td>
-                                                                        <td><?php echo $row['contactno']; ?></td>
-                                                                        <td><?php echo $row['email']; ?></td>
-
-                                                                        <td><?php echo $row['hsc']; ?></td>
-                                                                        <td><?php echo $row['ssc']; ?></td>
-                                                                        <td><?php echo $row['ug']; ?></td>
-                                                                        <td><?php echo $row['pg']; ?></td>
-
-
-                                                                    </tr>
-
-
-                                                    <?php
-
-                                                                }
-                                                            }
-                                                        }
-                                                    } ?>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <form method="POST" action=""></form>
-                                <button type="submit1" name='export_excel_btn' class=btn btn-info mt-12">Export to excel file</button>
-                                </form>
-
-                            <?php
-
-                            }
-                            ?>
                         </div>
 
+                        </form>
+
+                        <?php
+
+                        if (isset($_POST['submit'])) {
+
+
+                            $option = mysqli_real_escape_string($conn, $_POST['company']);
+
+                            // echo $_SESSION['option'];
+
+                        ?>
+                            <h3>Drive Applications</h3>
+                            <div class="row margin-top-20">
+                                <div class="col-md-12">
+                                    <div class="box-body table-responsive no-padding">
+                                        <table id="example2" class="table table-hover">
+                                            <thead>
+                                                <th>Student Name</th>
+                                                <th>Highest Qualification</th>
+                                                <th>Skills</th>
+                                                <th>City</th>
+                                                <th>State</th>
+                                                <th>Contact No.</th>
+                                                <th>Email</th>
+
+                                                <th>HSC</th>
+                                                <th>SSC</th>
+                                                <th>UG</th>
+                                                <th>PG</th>
+
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                // selecting student record via option 
+
+                                                $sql2 = "select id_jobpost from job_post where jobtitle = '$option'";
+                                                $result2 = $conn->query($sql2);
+
+                                                if ($result2->num_rows > 0) {
+                                                    while ($row2 = $result2->fetch_assoc()) {
+                                                        $jobid = $row2['id_jobpost'];
+
+
+
+                                                        $sql = "select * from users inner join apply_job_post on users.id_user = apply_job_post.id_user where id_jobpost = '$jobid' ";
+                                                        $result = $conn->query($sql);
+
+                                                        if ($result->num_rows > 0) {
+
+                                                            while ($row = $result->fetch_assoc()) {
+
+                                                                $skills = $row['skills'];
+                                                                $skills = explode(',', $skills);
+                                                ?>
+                                                                <tr>
+                                                                    <td><?php echo $row['firstname'] . ' ' . $row['lastname']; ?></td>
+                                                                    <td><?php echo $row['qualification']; ?></td>
+                                                                    <td>
+                                                                        <?php
+                                                                        foreach ($skills as $value) {
+                                                                            echo ' <span class="label label-success">' . $value . '</span>';
+                                                                        }
+                                                                        ?>
+                                                                    </td>
+                                                                    <td><?php echo $row['city']; ?></td>
+                                                                    <td><?php echo $row['state']; ?></td>
+                                                                    <td><?php echo $row['contactno']; ?></td>
+                                                                    <td><?php echo $row['email']; ?></td>
+
+                                                                    <td><?php echo $row['hsc']; ?></td>
+                                                                    <td><?php echo $row['ssc']; ?></td>
+                                                                    <td><?php echo $row['ug']; ?></td>
+                                                                    <td><?php echo $row['pg']; ?></td>
+
+
+                                                                </tr>
+
+
+                                                <?php
+
+                                                            }
+                                                        }
+                                                    }
+                                                } ?>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
 
 
 
                         <?php
 
-
-
+                        }
                         ?>
-
-
-
-
-
-
-
-
                     </div>
-                    <!-- <div class="col-md-2 ">
+
+
+
+
+                    <?php
+
+
+
+                    ?>
+
+
+
+                    Yah unplaced ki list aaeygi + eligiblity k hisab se ek filter bhi aaeyga + result k liye kuch karna hai +
+                    mail wali chij dalni hai
+
+
+
+
+                </div>
+                <!-- <div class="col-md- ">
 
 
 
                     </div> -->
-                </div>
         </div>
-        </section>
+    </div>
+    </section>
 
 
 
@@ -248,3 +251,53 @@ require_once("../db.php");
 </body>
 
 </html>
+
+
+<!-- script for sorting data  -->
+
+<script>
+    function sortTable() {
+        var table,
+            rows,
+            switching,
+            i,
+            x,
+            y,
+            shouldSwitch;
+        table = document.getElementById("example2");
+        switching = true;
+
+        /* Make a loop that will continue until
+        no switching has been done: */
+        while (switching) {
+            // Start by saying: no switching is done:
+            switching = false;
+            rows = table.rows;
+
+            /* Loop through all table rows (except the
+            first, which contains table headers): */
+            for (i = 1; i < (rows.length - 1); i++) {
+                // Start by saying there should be no switching:
+                shouldSwitch = false;
+                /* Get the two elements you want to compare,
+                one from current row and one from the next: */
+                x = rows[i].getElementsByTagName("TD")[0];
+                y = rows[i + 1].getElementsByTagName("TD")[0];
+
+                // Check if the two rows should switch place:
+                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                    // If so, mark as a switch and break the loop:
+                    shouldSwitch = true;
+                    break;
+                }
+            }
+
+            if (shouldSwitch) {
+                /* If a switch has been marked, make the switch
+                and mark that a switch has been done: */
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+            }
+        }
+    }
+</script>
