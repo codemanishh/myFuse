@@ -56,11 +56,11 @@ require_once("../db.php");
             <section id="candidates" class="content-header">
                 <div class="container">
                     <div class="row">
-                        <button type="submit1" name='export_excel_btn' class="btn btn-primary">Export to Excel</button>
 
-                        <button type="submit1" onclick="sortTable()" name='export_excel_btn' style="margin-left: 8px;" class="btn btn-success">Sort Data</button>
+                        <div class="col md-13">
+                            <a href="export.php"><button type="submit1" name='export_excel_btn' class="btn btn-primary">Export to Excel</button></a>
 
-                        <div class="col-md-12">
+                            <button type="submit1" onclick="sortTable()" name='export_excel_btn' style="margin-left: 8px;" class="btn btn-success">Sort Data</button>
                             <h3 style="text-align: center;"> Student applications for various companies</h3>
                             <?php
 
@@ -91,121 +91,117 @@ require_once("../db.php");
 
                             </form>
 
-                        </div>
 
-                        </form>
-
-                        <?php
-
-                        if (isset($_POST['submit'])) {
+                            </form>
 
 
-                            $option = mysqli_real_escape_string($conn, $_POST['company']);
+                            <?php
 
-                            // echo $_SESSION['option'];
-
-                        ?>
-                            <h3>Drive Applications</h3>
-                            <div class="row margin-top-20">
-                                <div class="col-md-12">
-                                    <div class="box-body table-responsive no-padding">
-                                        <table id="example2" class="table table-hover">
-                                            <thead>
-                                                <th>Student Name</th>
-                                                <th>Highest Qualification</th>
-                                                <th>Skills</th>
-                                                <th>City</th>
-                                                <th>State</th>
-                                                <th>Contact No.</th>
-                                                <th>Email</th>
-
-                                                <th>HSC</th>
-                                                <th>SSC</th>
-                                                <th>UG</th>
-                                                <th>PG</th>
-
-                                            </thead>
-                                            <tbody>
-                                                <?php
-                                                // selecting student record via option 
-
-                                                $sql2 = "select id_jobpost from job_post where jobtitle = '$option'";
-                                                $result2 = $conn->query($sql2);
-
-                                                if ($result2->num_rows > 0) {
-                                                    while ($row2 = $result2->fetch_assoc()) {
-                                                        $jobid = $row2['id_jobpost'];
+                            if (isset($_POST['submit'])) {
 
 
+                                $option = mysqli_real_escape_string($conn, $_POST['company']);
 
-                                                        $sql = "select * from users inner join apply_job_post on users.id_user = apply_job_post.id_user where id_jobpost = '$jobid' ";
-                                                        $result = $conn->query($sql);
+                                // echo $_SESSION['option'];
 
-                                                        if ($result->num_rows > 0) {
+                            ?>
+                                <!-- <h3>Drive Applications</h3> -->
+                                <div class="row margin-top-20">
+                                    <div class="col-md-13">
+                                        <div class="box-body table-responsive no-padding">
+                                            <table id="example2" class="table table-hover">
+                                                <thead>
+                                                    <th>Student Name</th>
+                                                    <th>Highest Qualification</th>
+                                                    <th>Skills</th>
+                                                    <th>City</th>
+                                                    <th>State</th>
+                                                    <th>Contact No.</th>
+                                                    <th>Email</th>
 
-                                                            while ($row = $result->fetch_assoc()) {
+                                                    <th>HSC</th>
+                                                    <th>SSC</th>
+                                                    <th>UG</th>
+                                                    <th>PG</th>
 
-                                                                $skills = $row['skills'];
-                                                                $skills = explode(',', $skills);
-                                                ?>
-                                                                <tr>
-                                                                    <td><?php echo $row['firstname'] . ' ' . $row['lastname']; ?></td>
-                                                                    <td><?php echo $row['qualification']; ?></td>
-                                                                    <td>
-                                                                        <?php
-                                                                        foreach ($skills as $value) {
-                                                                            echo ' <span class="label label-success">' . $value . '</span>';
-                                                                        }
-                                                                        ?>
-                                                                    </td>
-                                                                    <td><?php echo $row['city']; ?></td>
-                                                                    <td><?php echo $row['state']; ?></td>
-                                                                    <td><?php echo $row['contactno']; ?></td>
-                                                                    <td><?php echo $row['email']; ?></td>
+                                                </thead>
+                                                <tbody>
+                                                    <?php
+                                                    // selecting student record via option 
 
-                                                                    <td><?php echo $row['hsc']; ?></td>
-                                                                    <td><?php echo $row['ssc']; ?></td>
-                                                                    <td><?php echo $row['ug']; ?></td>
-                                                                    <td><?php echo $row['pg']; ?></td>
+                                                    $sql2 = "select id_jobpost from job_post where jobtitle = '$option'";
+                                                    $result2 = $conn->query($sql2);
+
+                                                    if ($result2->num_rows > 0) {
+                                                        while ($row2 = $result2->fetch_assoc()) {
+                                                            $jobid = $row2['id_jobpost'];
 
 
-                                                                </tr>
+
+                                                            $sql = "select * from users inner join apply_job_post on users.id_user = apply_job_post.id_user where id_jobpost = '$jobid' ";
+                                                            $_SESSION['QUERY'] = $sql;
+                                                            $result = $conn->query($sql);
+
+                                                            if ($result->num_rows > 0) {
+
+                                                                while ($row = $result->fetch_assoc()) {
+
+                                                                    $skills = $row['skills'];
+                                                                    $skills = explode(',', $skills);
+                                                    ?>
+                                                                    <tr>
+                                                                        <td><?php echo $row['firstname'] . ' ' . $row['lastname']; ?></td>
+                                                                        <td><?php echo $row['qualification']; ?></td>
+                                                                        <td>
+                                                                            <?php
+                                                                            foreach ($skills as $value) {
+                                                                                echo ' <span class="label label-success">' . $value . '</span>';
+                                                                            }
+                                                                            ?>
+                                                                        </td>
+                                                                        <td><?php echo $row['city']; ?></td>
+                                                                        <td><?php echo $row['state']; ?></td>
+                                                                        <td><?php echo $row['contactno']; ?></td>
+                                                                        <td><?php echo $row['email']; ?></td>
+
+                                                                        <td><?php echo $row['hsc']; ?></td>
+                                                                        <td><?php echo $row['ssc']; ?></td>
+                                                                        <td><?php echo $row['ug']; ?></td>
+                                                                        <td><?php echo $row['pg']; ?></td>
 
 
-                                                <?php
+                                                                    </tr>
 
+
+                                                    <?php
+
+                                                                }
                                                             }
                                                         }
-                                                    }
-                                                } ?>
-                                            </tbody>
+                                                    } ?>
+                                                </tbody>
 
-                                        </table>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
 
 
-                        <?php
+                            <?php
 
-                        }
-                        ?>
+                            }
+                            ?>
+
+                        </div>
                     </div>
 
 
 
 
-                    <?php
 
-
-
-                    ?>
-
-
-
-                    Yah unplaced ki list aaeygi + eligiblity k hisab se ek filter bhi aaeyga + result k liye kuch karna hai +
-                    mail wali chij dalni hai
+                    <!-- Yah unplaced ki list aaeygi + eligiblity k hisab se ek filter bhi aaeyga + result k liye kuch karna hai +
+                    mail wali chij dalni hai -->
 
 
 

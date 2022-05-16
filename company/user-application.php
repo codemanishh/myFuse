@@ -123,11 +123,11 @@ if ($result->num_rows == 0) {
                         echo '<br>';
                         ?>
                         <div class="row">
-                          <div class="col-md-3 pull-left">
-                            <a href="under-review.php?id=<?php echo $row['id_user']; ?>&id_jobpost=<?php echo $_GET['id_jobpost']; ?>" class="btn btn-success">Mark Under Review</a>
-                          </div>
                           <div class="col-md-3 pull-right">
                             <a href="reject.php?id=<?php echo $row['id_user']; ?>&id_jobpost=<?php echo $_GET['id_jobpost']; ?>" class="btn btn-danger">Reject Application</a>
+                          </div>
+                          <div class="col-md-3 pull-right">
+                            <a href="under-review.php?id=<?php echo $row['id_user']; ?>&id_jobpost=<?php echo $_GET['id_jobpost']; ?>" class="btn btn-success">Mark as Placed</a>
                           </div>
                         </div>
                       </div>

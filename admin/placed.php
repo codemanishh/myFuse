@@ -57,7 +57,14 @@ require_once("../db.php");
                 <div class="container">
                     <div class="row">
                         <!-- <div class="col md-1"></div> -->
-                        <div class="col-md-6">
+                        <div class="col md-6">
+
+
+                        </div>
+
+
+                        <div class="col md-6">
+
 
                             <div class="col md-4">
                                 <h3 style="text-align: center;">Placed Students list </h3>
@@ -124,32 +131,7 @@ require_once("../db.php");
                             </div>
 
 
-
-
-
                         </div>
-                        <div class="col md-6"></div>
-
-                        <div class="col md-4">
-
-
-                            <!-- yah par table ki id or function ki id sab alag dalni hai  -->
-
-
-                            <h3 style="text-align: center;">Unplaced Students list </h3>
-                            <h3>Filters</h3>
-                            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
-                            <!-- <button onclick="sortTable()">Sort</button> -->
-                            <button type="submit1" name='export_excel_btn' style="margin-left: 8px;" class=" btn btn-primary">Export to Excel</button>
-
-                            <button type="submit1" onclick="sortTable()" name='export_excel_btn' style="margin-left: 8px;" class="btn btn-success">Sort Data</button>
-                        </div>
-
-
-
-
-
-
 
 
                     </div>
@@ -244,16 +226,22 @@ require_once("../db.php");
 
         // Loop through all table rows, and hide those who don't match the search query
         for (i = 0; i < tr.length; i++) {
-            for (j = 0; j < 5; j++) {
-                {
-                    td = tr[i].getElementsByTagName("td")[j]; //1 row ke 1 column ki value hai yeh
-                    if (td) {
-                        txtValue = td.textContent || td.innerText;
-                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                            tr[i].style.display = "";
-                        } else {
-                            tr[i].style.display = "none";
-                        }
+
+            // Hide the row initially.
+            tr[i].style.display = "none";
+            td = tr[i].getElementsByTagName("td");
+
+            for (var j = 0; j < td.length; j++) {
+
+                td = tr[i].getElementsByTagName("td")[j]; //1 row ke 1 column ki value hai yeh
+                if (td) {
+                    txtValue = td.textContent || td.innerHTML;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                        break;
+                        // } else {
+                        //     tr[i].style.display = "none";
+                        // }
                     }
                 }
             }

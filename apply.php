@@ -34,12 +34,20 @@ if (isset($_GET)) {
 		$row = $result->fetch_assoc();
 		$eligibility = $row['maximumsalary'];
 		$course2 = $row['qualification'];
+		if ($total >= $eligibility) {
+			if ($course1 == $course2) {
+				header("Location: view-job-post.php?id=$_GET[id]");
+				$_SESSION['status'] = "You are eligible for this drive.";
+				$_SESSION['status_code'] = "success";
+			}
+		}
 	}
 
 	// for checking the eligibility & course criteria 
 
 	if ($total >= $eligibility) {
 		if ($course1 == $course2) {
+			// check for status 
 
 
 			// 1. Check if user has already applied for the Drive post or not. If not then add his details to apply_job_post table.

@@ -81,6 +81,9 @@ require_once("db.php");
                   <?php
                   if (isset($_SESSION["id_user"]) && empty($_SESSION['companyLogged'])) { ?>
                     <div>
+                      <a onclick="eligiblefunction()" href="user/checkeligibility.php?id=<?php echo $row['id_jobpost']; ?>" class="btn btn-primary pull-right btn-flat margin-top-50">Check Eligibility</a>
+                    </div>
+                    <div>
                       <a onclick="reallyfunction()" href="apply.php?id=<?php echo $row['id_jobpost']; ?>" class="btn btn-success btn-flat margin-top-50">Apply</a>
                     </div>
                   <?php } ?>
