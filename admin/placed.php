@@ -55,94 +55,101 @@ require_once("../db.php");
 
             <section id="candidates" class="content-header">
                 <div class="container">
-                    <div class="row">
-                        <!-- <div class="col md-1"></div> -->
-                        <div class="col md-6">
-
-
-                        </div>
-
-
-                        <div class="col md-6">
-
-
-                            <div class="col md-4">
-                                <h3 style="text-align: center;">Placed Students list </h3>
-                                <h3>Filters</h3>
-                                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
-                                <!-- <button onclick="sortTable()">Sort</button> -->
-                                <button type="submit1" name='export_excel_btn' style="margin-left: 8px;" class=" btn btn-primary">Export to Excel</button>
-
-                                <button type="submit1" onclick="sortTable()" name='export_excel_btn' style="margin-left: 8px;" class="btn btn-success">Sort Data</button>
-                            </div>
+                    <!-- <div class="row"> -->
+                    <!-- <div class="col md-1"></div> -->
 
 
 
-                            <div class="row margin-top-20">
-                                <div class="col-md-12">
-                                    <div class="box-body table-responsive no-padding">
-                                        <table id="example2" class="table table-hover">
-                                            <thead>
-                                                <th>Student Name</th>
-                                                <th>Student Email</th>
-                                                <th>Company Name</th>
-                                                <th>Role</th>
-                                                <th>CTC</th>
-                                                <th>Gender</th>
+                    <div class="col md-4">
+                        <h3 style="text-align: center;">Placed Students list </h3>
+                        <h3>Filters</h3>
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+                        <!-- <button onclick="sortTable()">Sort</button> -->
+                        <a href="export1.php"><button type="submit1" name='export_excel_btn' class="btn btn-primary">Export to Excel</button></a>
 
-
-
-                                            </thead>
-                                            <tbody>
-                                                <?php
-                                                // selecting student record via option 
-                                                // fetching placed students from placed table &user table
-
-                                                $sql = "select * from placed;";
-                                                $result = $conn->query($sql);
-
-                                                if ($result->num_rows > 0) {
-
-                                                    while ($row = $result->fetch_assoc()) {
-
-
-                                                ?>
-                                                        <tr>
-                                                            <td><?php echo $row['sname']; ?></td>
-                                                            <td><?php echo $row['semail']; ?></td>
-                                                            <td><?php echo $row['cname']; ?></td>
-                                                            <td><?php echo $row['role']; ?></td>
-                                                            <td><?php echo $row['ctc']; ?></td>
-                                                            <td><?php echo $row['gender']; ?></td>
-
-                                                        </tr>
-
-
-                                                <?php
-
-                                                    }
-                                                }
-
-                                                ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-
+                        <button type="submit1" onclick="sortTable()" name='export_excel_btn' style="margin-left: 8px;" class="btn btn-success">Sort Data</button>
                     </div>
-                    <!-- <div class="col-md-2 ">
+
+
+
+                    <div class="row margin-top-20">
+                        <div class="col-md-12">
+                            <div class="box-body table-responsive no-padding">
+                                <table id="example2" class="table table-hover">
+                                    <tr class="header">
+
+
+
+                                        <th style="width:20%;">Student Name</th>
+                                        <th style="width:30%;">Student Email</th>
+                                        <th style="width:20%;">Company Name</th>
+                                        <th style="width:20%;">Role</th>
+                                        <th style="width:20%;">CTC</th>
+
+
+                                    </tr>
+                                    <!-- <thead>
+                                            <th>Student Name</th>
+                                            <th>Student Email</th>
+                                            <th>Company Name</th>
+                                            <th>Role</th>
+                                            <th>CTC</th>
+                                         
+
+
+
+                                        </thead> -->
+                                    <tbody>
+                                        <?php
+                                        // selecting student record via option 
+                                        // fetching placed students from placed table &user table
+
+                                        $sql = "select * from placed;";
+                                        $_SESSION['QUERY'] = $sql;
+                                        $result = $conn->query($sql);
+
+                                        if ($result->num_rows > 0) {
+
+                                            while ($row = $result->fetch_assoc()) {
+
+
+                                        ?>
+                                                <tr>
+                                                    <td><?php echo $row['sname']; ?></td>
+                                                    <td><?php echo $row['semail']; ?></td>
+                                                    <td><?php echo $row['cname']; ?></td>
+                                                    <td><?php echo $row['role']; ?></td>
+                                                    <td><?php echo $row['ctc']; ?></td>
+
+
+                                                </tr>
+
+
+                                        <?php
+
+                                            }
+                                        }
+
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- <div class="col-md-2 ">
 
 
 
                     </div> -->
-                </div>
         </div>
-        </section>
+    </div>
+    </section>
 
 
 
@@ -216,6 +223,38 @@ require_once("../db.php");
 
 <!-- script for filtering table on the basis of company name  -->
 <script>
+    // function myFunction() {
+
+    //     var input, filter, table, tr, td, i, txtValue;
+    //     input = document.getElementById("myInput");
+    //     filter = input.value.toUpperCase();
+    //     table = document.getElementById("example2");
+    //     tr = table.getElementsByTagName("tr");
+
+    //     // Loop through all table rows, and hide those who don't match the search query
+    //     for (i = 0; i < tr.length; i++) {
+
+
+    //         td = tr[i].getElementsByTagName("td")[0];
+
+    //         for (var j = 0; j < td.length; j++) {
+
+    //             td = tr[i].getElementsByTagName("td")[j]; //1 row ke 1 column ki value hai yeh
+    //             if (td) {
+    //                 txtValue = td.textContent || td.innerHTML;
+    //                 if (txtValue.toUpperCase().indexOf(filter) > -1) {
+    //                     tr[i].style.display = "";
+
+    //                 } else {
+    //                     tr[i].style.display = "none";
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+
+
+
     function myFunction() {
         // Declare variables
         var input, filter, table, tr, td, i, txtValue;
@@ -226,25 +265,69 @@ require_once("../db.php");
 
         // Loop through all table rows, and hide those who don't match the search query
         for (i = 0; i < tr.length; i++) {
-
-            // Hide the row initially.
-            tr[i].style.display = "none";
-            td = tr[i].getElementsByTagName("td");
-
-            for (var j = 0; j < td.length; j++) {
-
-                td = tr[i].getElementsByTagName("td")[j]; //1 row ke 1 column ki value hai yeh
-                if (td) {
-                    txtValue = td.textContent || td.innerHTML;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                        break;
-                        // } else {
-                        //     tr[i].style.display = "none";
-                        // }
-                    }
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
                 }
             }
         }
     }
 </script>
+
+
+
+
+<style>
+    #myInput {
+        background-image: url('/css/searchicon.png');
+        /* Add a search icon to input */
+        background-position: 10px 12px;
+        /* Position the search icon */
+        background-repeat: no-repeat;
+        /* Do not repeat the icon image */
+        width: 100%;
+        /* Full-width */
+        font-size: 16px;
+        /* Increase font-size */
+        padding: 12px 20px 12px 40px;
+        /* Add some padding */
+        border: 1px solid #ddd;
+        /* Add a grey border */
+        margin-bottom: 12px;
+        /* Add some space below the input */
+    }
+
+    #example2 {
+        border-collapse: collapse;
+        /* Collapse borders */
+        width: 100%;
+        /* Full-width */
+        border: 1px solid #ddd;
+        /* Add a grey border */
+        font-size: 18px;
+        /* Increase font-size */
+    }
+
+    #example2 th,
+    #example2 td {
+        text-align: left;
+        /* Left-align text */
+        padding: 12px;
+        /* Add padding */
+    }
+
+    #example2 tr {
+        /* Add a bottom border to all table rows */
+        border-bottom: 1px solid #ddd;
+    }
+
+    #example2 tr.header,
+    #example2 tr:hover {
+        /* Add a grey background color to the table header and on hover */
+        background-color: #f1f1f1;
+    }
+</style>

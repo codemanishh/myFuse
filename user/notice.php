@@ -68,6 +68,7 @@ require_once("../db.php");
                                             <tr>
                                                 <th>Subject</th>
                                                 <th>Notice</th>
+                                                <th>Attachment</th>
 
 
 
@@ -90,6 +91,11 @@ require_once("../db.php");
                                             ?>
                                                     <td><?php echo $row['subject']; ?></td>
                                                     <td><?php echo $row['notice']; ?></td>
+                                                    <?php if ($row['resume'] != '') { ?>
+                                                        <td><a href="../uploads/resume/<?php echo $row['resume']; ?>" download="<?php echo 'Notice'; ?>"><i class="fa fa-file"></i></a></td>
+                                                    <?php } else { ?>
+                                                        <td>No Resume Uploaded</td>
+                                                    <?php } ?>
 
                                                     <td><?php echo $row['date']; ?></td>
 

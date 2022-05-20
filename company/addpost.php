@@ -3,16 +3,18 @@
 //To Handle Session Variables on This Page
 session_start();
 
-if(empty($_SESSION['id_company'])) {
-  header("Location: ../index.php");
-  exit();
+if (empty($_SESSION['id_company'])) {
+	header("Location: ../index.php");
+	exit();
 }
 
 //Including Database Connection From db.php file to avoid rewriting in all files
 require_once("../db.php");
 
 //if user Actually clicked Add Post Button
-if(isset($_POST)) {
+if (isset($_POST)) {
+
+
 
 	// New way using prepared statements. This is safe from SQL INJECTION. Should consider to update to this method when many people are using this method.
 
@@ -30,9 +32,10 @@ if(isset($_POST)) {
 	$qualification = mysqli_real_escape_string($conn, $_POST['qualification']);
 
 
-	if($stmt->execute()) {
+	if ($stmt->execute()) {
 		//If data Inserted successfully then redirect to dashboard
 		$_SESSION['jobPostSuccess'] = true;
+		include 'sendmail.php';
 		header("Location: index.php");
 		exit();
 	} else {
@@ -59,7 +62,6 @@ if(isset($_POST)) {
 
 	//Close database connection. Not compulsory but good practice.
 	$conn->close();
-
 } else {
 	//redirect them back to dashboard page if they didn't click Add Post button
 	header("Location: create-job-post.php");
