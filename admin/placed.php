@@ -104,7 +104,7 @@ require_once("../db.php");
                                         // selecting student record via option 
                                         // fetching placed students from placed table &user table
 
-                                        $sql = "select * from placed;";
+                                        $sql = "select * from users inner join apply_job_post INNER JOIN job_post where users.id_user = apply_job_post.id_user AND apply_job_post.id_jobpost = job_post.id_jobpost;;";
                                         $_SESSION['QUERY'] = $sql;
                                         $result = $conn->query($sql);
 
@@ -115,11 +115,11 @@ require_once("../db.php");
 
                                         ?>
                                                 <tr>
-                                                    <td><?php echo $row['sname']; ?></td>
-                                                    <td><?php echo $row['semail']; ?></td>
-                                                    <td><?php echo $row['cname']; ?></td>
-                                                    <td><?php echo $row['role']; ?></td>
-                                                    <td><?php echo $row['ctc']; ?></td>
+                                                    <td><?php echo $row['firstname'] . ' ' . $row['lastname']; ?></td>
+                                                    <td><?php echo $row['email']; ?></td>
+                                                    <td><?php echo $row['jobtitle']; ?></td>
+                                                    <td><?php echo $row['experience']; ?></td>
+                                                    <td><?php echo $row['minimumsalary']; ?></td>
 
 
                                                 </tr>

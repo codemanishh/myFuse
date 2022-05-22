@@ -59,6 +59,7 @@ if (isset($_POST['submit'])) {
     $sql = "INSERT INTO notice(subject,notice,audience,resume, hash,`date`) VALUES ('$subject','$notice','$audience','$file', '$hash',now())";
 
     if ($conn->query($sql) === TRUE) {
+        include 'sendmail.php';
         header("Location: postnotice.php");
         exit();
     }
