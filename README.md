@@ -19,19 +19,19 @@ i> cd C:\\xampp\htdocs\
 
 ii> git clone https://github.com/narendrakumar03/Placement-Portal
 
-4. extract files in C:\xampp\htdocs.
+4. Extract files in C:\xampp\htdocs.
 
-5. open link localhost/phpmyadmin
+5. Open link localhost/phpmyadmin
 
-6. click on new at side navbar.
+6. Click on new at side navbar.
 
-7. give a database name as (placement_portal) hit on create button.
+7. Give a database name as (placement_portal) hit on create button.
 
-8. after creating database name click on import.
+8. After creating database name click on import.
 
-9. browse the file in directory [placement-portal/database/db1.sql].
+9. Browse the file in directory [placement-portal/database/db1.sql].
 
-10. open any browser and type http://localhost/placement-portal.
+10. Open any browser and type http://localhost/placement-portal.
 
 
 
