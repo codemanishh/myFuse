@@ -9,8 +9,7 @@ The Placement Management System is a web application for the training and  place
 
 
 
-
-INSTALLATIONS
+GETTING STARTED
 
 1. Install XAMPP or WAMPP.
 
