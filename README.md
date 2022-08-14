@@ -72,7 +72,7 @@ Check Eligibility
 
 Resources
 
-https://stackoverflow.com/
-https://github.com/
-https://tailwindcss.com/
-https://getbootstrap.com/
+1. https://stackoverflow.com/  <br/>
+2. https://github.com/<br/>
+3. https://tailwindcss.com/<br/>
+4. https://getbootstrap.com/
