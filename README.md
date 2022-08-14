@@ -12,17 +12,20 @@ Home Page
 
 ![home](https://user-images.githubusercontent.com/87755170/184550716-f36710d7-c5cb-4b1a-b5f2-8227920e485c.png)
 
+
 Login Page
 
 ![Login Page](https://user-images.githubusercontent.com/87755170/184550718-f78d2e05-d90f-46cb-8a07-e3dcc3a538d3.png)
 
-Student Login Page
-
-![student login](https://user-images.githubusercontent.com/87755170/184550787-e6f309c3-4939-4fee-bb98-38e3f8d81672.png)
 
 Student Panel
 
 ![student panl](https://user-images.githubusercontent.com/87755170/184550794-a778a02d-748c-490d-97ba-bf68c22fd3f4.png)
+
+
+Admin Panel
+
+![Screenshot 2022-05-20 234626](https://user-images.githubusercontent.com/87755170/184550961-84913a45-65ac-4a70-a5b9-233709dd4465.png)
 
 Resume Generator
 
