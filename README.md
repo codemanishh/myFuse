@@ -17,7 +17,7 @@ OR follow gitbash commands
 
 i> cd C:\\xampp\htdocs\
 
-ii> git clone https://github.com/PuneethReddyHC/online-shopping-system-advanced.git
+ii> git clone https://github.com/narendrakumar03/Placement-Portal
 
 4. extract files in C:\xampp\htdocs.
 
@@ -25,13 +25,13 @@ ii> git clone https://github.com/PuneethReddyHC/online-shopping-system-advanced.
 
 6. click on new at side navbar.
 
-7. give a database name as (onlineshop) hit on create button.
+7. give a database name as (placement_portal) hit on create button.
 
 8. after creating database name click on import.
 
-9. browse the file in directory [online-shopping-system-advanced/database/onlineshop.sql].
+9. browse the file in directory [placement-portal/database/db1.sql].
 
-10. open any browser and type http://localhost/online-shopping-system-advanced-master.
+10. open any browser and type http://localhost/placement-portal.
 
 
 
