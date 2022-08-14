@@ -70,3 +70,9 @@ Check Eligibility
 
 ![check eligibility](https://user-images.githubusercontent.com/87755170/184550829-86546902-a38c-4fe6-a53c-bf5844668f05.png)
 
+Resources
+
+https://stackoverflow.com/
+https://github.com/
+https://tailwindcss.com/
+https://getbootstrap.com/
