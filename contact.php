@@ -99,7 +99,7 @@
                             <i class="bi bi-phone flex-shrink-0"></i>
                             <div>
                                 <h4>Call:</h4>
-                                <p>7987487551</p>
+                                <p>XXXXXXXX09</p>
                             </div>
                         </div><!-- End Info Item -->
 
