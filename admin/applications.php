@@ -15,7 +15,7 @@ require_once("../db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Placement Portal</title>
+  <title>MyFuse</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -68,7 +68,7 @@ require_once("../db.php");
                     <li><a href="active-jobs.php"><i class="fa fa-briefcase"></i> Active Drives</a></li>
                     <li class="active"><a href="applications.php"><i class="fa fa-address-card-o"></i> Students Profile</a></li>
                     <!-- <li><a href="companies.php"><i class="fa fa-building"></i> Drives</a></li> -->
-                    <li><a href="companies.php"><i class="fa fa-arrow-circle-o-right"></i> Co - Ordinators</a></li>
+                    <li><a href="companies.php"><i class="fa fa-arrow-circle-o-right"></i> Companies </a></li>
                     <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
                   </ul>
                 </div>
@@ -86,7 +86,7 @@ require_once("../db.php");
                         <th>Highest Qualification</th>
                         <th>Skills</th>
                         <th>City</th>
-                        <th>State</th>
+                        <th>College</th>
                         <th>Download Resume</th>
                         <th>Status</th>
                         <th>Delete</th>
@@ -113,7 +113,7 @@ require_once("../db.php");
                                 ?>
                               </td>
                               <td><?php echo $row['city']; ?></td>
-                              <td><?php echo $row['state']; ?></td>
+                              <td><?php echo $row['college']; ?></td>
                               <?php if ($row['resume'] != '') { ?>
                                 <td><a href="../uploads/resume/<?php echo $row['resume']; ?>" download="<?php echo $row['firstname'] . ' Resume'; ?>"><i class="fa fa-file-pdf-o"></i></a></td>
                               <?php } else { ?>
@@ -202,8 +202,7 @@ require_once("../db.php");
 
     <footer class="main-footer" style="margin-left: 0px;">
       <div class="text-center">
-        <strong>Copyright &copy; 2022 <a href="learningfromscratch.online">Placement Portal</a>.</strong> All rights
-        reserved.
+      <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
       </div>
     </footer>
 

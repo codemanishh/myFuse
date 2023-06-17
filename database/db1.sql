@@ -113,6 +113,7 @@ CREATE TABLE `company` (
   `password` varchar(255) NOT NULL,
   `aboutme` varchar(255) DEFAULT NULL,
   `logo` varchar(255) NOT NULL,
+  `email_access` varchar(255) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT current_timestamp(),
   `active` int(11) NOT NULL DEFAULT 2,
   PRIMARY KEY (`id_company`),
@@ -126,7 +127,7 @@ CREATE TABLE `company` (
 
 LOCK TABLES `company` WRITE;
 /*!40000 ALTER TABLE `company` DISABLE KEYS */;
-INSERT INTO `company` VALUES (2,'Amit','Co-ordinator','India','Madhya Pradesh','Indore','7987487551','www.scsplacementcelll.com','amit@gmail.com','ZTM4OGYwMmY3NTBlNjVlYmJhOTVhYjk0OTNjZGEwMWU=','Student','627635c95a472.jpg','2022-05-05 08:43:22',1);
+INSERT INTO `company` VALUES (2,'Amit','Co-ordinator','India','Madhya Pradesh','Indore','7987487551','www.scsplacementcelll.com','amit@gmail.com','ZTM4OGYwMmY3NTBlNjVlYmJhOTVhYjk0OTNjZGEwMWU=','Student','627635c95a472.jpg','2022-05-05 08:43:22',1,'Yes');
 /*!40000 ALTER TABLE `company` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,6 +173,7 @@ CREATE TABLE `job_post` (
   `maximumsalary` varchar(255) NOT NULL,
   `experience` varchar(255) NOT NULL,
   `qualification` varchar(255) NOT NULL,
+  `stream` varchar(255) NOT NULL,
   `createdat` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id_jobpost`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
@@ -181,11 +183,12 @@ CREATE TABLE `job_post` (
 -- Dumping data for table `job_post`
 --
 
-LOCK TABLES `job_post` WRITE;
-/*!40000 ALTER TABLE `job_post` DISABLE KEYS */;
-INSERT INTO `job_post` VALUES (1,2,'Accenture','Accenture plc is an Ireland-based multinational professional services company that specializes in information technology (IT) services and consulting. A Fortune Global 500 company, it reported revenues of $50.53 billion in 2021. Accenture\'s current clients include 91 of the Fortune Global 100 and more than three-quarters of the Fortune Global 500.\r\n\r\nJulie Sweet has served as CEO of Accenture since 1 September 2019.\r\n\r\nIt has been incorporated in Dublin, Ireland, since 2009.','650000','65','Software Engineer','MCA','2022-05-05 09:16:08'),(3,2,'Quantiphi','Cognizant is an American multinational information technology services and consulting company. It is headquartered in Teaneck, New Jersey, United States. Cognizant is part of the NASDAQ-100 and trades under CTSH. It was founded as an in-house technology unit of Dun & Bradstreet in 1994,[5] and started serving external clients in 1996.[5]\r\n\r\nAfter a series of corporate re-organizations there was an initial public offering in 1998.[6]\r\n\r\nCognizant had a period of fast growth during the 2000s and became a Fortune 500 company in 2011; as of 2021, it is ranked 185.[7]','450000','50','Software Engineer','MCA','2022-05-07 11:57:52');
-/*!40000 ALTER TABLE `job_post` ENABLE KEYS */;
-UNLOCK TABLES;
+-- LOCK TABLES `job_post` WRITE;
+-- /*!40000 ALTER TABLE `job_post` DISABLE KEYS */;
+-- INSERT INTO `job_post` VALUES (1,2,'Accenture','Accenture plc is an Ireland-based multinational professional services company that specializes in information technology (IT) services and consulting. A Fortune Global 500 company, it reported revenues of $50.53 billion in 2021. Accenture\'s current clients include 91 of the Fortune Global 100 and more than three-quarters of the Fortune Global 500.\r\n\r\nJulie Sweet has served as CEO of Accenture since 1 September 2019.\r\n\r\nIt has been incorporated in Dublin, Ireland, since 2009.','650000','65','Software Engineer','B.S.C','ISE','2022-05-05 09:16:08'),(3,2,'Quantiphi','Cognizant is an American multinational information technology services and consulting company. It is headquartered in Teaneck, New Jersey, United States. Cognizant is part of the NASDAQ-100 and trades under CTSH. It was founded as an in-house technology unit of Dun & Bradstreet in 1994,[5] and started serving external clients in 1996.[5]\r\n\r\nAfter a series of corporate re-organizations there was an initial public offering in 1998.[6]\r\n\r\nCognizant had a period of fast growth during the 2000s and became a Fortune 500 company in 2011; as of 2021, it is ranked 185.[7]','450000','5','Software Engineer','B.E','CSE','2022-05-07 11:57:52');
+-- /*!40000 ALTER TABLE `job_post` ENABLE KEYS */;
+-- UNLOCK TABLES;
+--
 
 --
 -- Table structure for table `mailbox`
@@ -238,7 +241,7 @@ CREATE TABLE `notice` (
 
 LOCK TABLES `notice` WRITE;
 /*!40000 ALTER TABLE `notice` DISABLE KEYS */;
-INSERT INTO `notice` VALUES (23,'Placement Result for Accenture','Narendra Kumar','All Students','2022-05-10 12:53:43'),(24,'Placement Result for Cognizant','Amit','Co-ordinators','2022-05-10 12:54:06');
+INSERT INTO `notice` VALUES (23,'Placement Result for Accenture','Narendra Kumar','All Students','2022-05-10 12:53:43'),(24,'Placement Result for Cognizant','Amit','Companies','2022-05-10 12:54:06');
 /*!40000 ALTER TABLE `notice` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -305,12 +308,14 @@ CREATE TABLE `users` (
   `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
+  `gender` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `address` text DEFAULT NULL,
   `city` varchar(255) DEFAULT NULL,
   `state` varchar(255) DEFAULT NULL,
   `contactno` varchar(255) DEFAULT NULL,
+  `college` varchar(255) DEFAULT NULL,
   `qualification` varchar(255) DEFAULT NULL,
   `stream` varchar(255) DEFAULT NULL,
   `passingyear` varchar(255) DEFAULT NULL,
@@ -322,10 +327,10 @@ CREATE TABLE `users` (
   `active` int(11) NOT NULL DEFAULT 2,
   `aboutme` text DEFAULT NULL,
   `skills` text DEFAULT NULL,
-  `hsc` varchar(200) NOT NULL,
-  `ssc` int(11) NOT NULL,
-  `ug` int(11) NOT NULL,
-  `pg` int(11) NOT NULL,
+  `hsc` varchar(200) DEFAULT NULL,
+  `ssc` int(11) DEFAULT NULL,
+  `ug` int(11) DEFAULT NULL,
+  `pg` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_user`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
@@ -337,7 +342,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Narendra','Kumar','narendra@gmail.com','ZTM4OGYwMmY3NTBlNjVlYmJhOTVhYjk0OTNjZGEwMWU=','32, ANNAPURNA COLONY\r\nKODARIYA','MHOW','Madhya Pradesh','7987487551','MCA','','','','','','627b82a7732d4.','0e52568ac719e70f13c79b8c18020d67',1,'Student','Web Development','80',80,65,65);
+INSERT INTO `users` VALUES (1,'Narendra','Kumar','Male','narendra@gmail.com','ZTM4OGYwMmY3NTBlNjVlYmJhOTVhYjk0OTNjZGEwMWU=','32, ANNAPURNA COLONY\r\nKODARIYA','MHOW','Madhya Pradesh','7987487551','DSCE', 'MCA','','','','','','627b82a7732d4.','0e52568ac719e70f13c79b8c18020d67',1,'Student','Web Development','80',80,65,65);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

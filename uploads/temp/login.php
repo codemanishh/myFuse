@@ -14,7 +14,7 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Placement Portal</title>
+  <title>MyFuse</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -116,7 +116,7 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
             <div class="col-md-6 latest-job ">
               <div class="small-box bg-red padding-5">
                 <div class="inner">
-                  <h3 class="text-center">Placement Cell</h3>
+                  <h3 class="text-center">Company</h3>
                 </div>
                 <a href="login-company.php" class="small-box-footer">
                   Login <i class="fa fa-arrow-circle-right"></i>
@@ -134,8 +134,7 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
 
     <footer class="main-footer" style="margin-left: 0px;">
       <div class="text-center">
-        <strong>Copyright &copy; 2022 <a href="learningfromscratch.online">Placement Portal</a>.</strong> All rights
-        reserved.
+      <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
       </div>
     </footer>
 

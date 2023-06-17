@@ -10,35 +10,45 @@ require_once("db.php");
 <!DOCTYPE html>
 <html lang="en">
 <title>Home</title>
+<style>
+    .banner {
+      background-image: url('assets/img/banner-sec1.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* color: #FFFFFF; */
+      color: #02A2BD;
+      font-size: 24px;
+      text-align: center;
+      position: relative;
+      text-weight: bold;
+      
+    }
+</style>
 
 <head>
     <?php
-
-    include 'php/head.php'
-
+        include 'php/head.php'
     ?>
-
-
 </head>
-
 <body>
-
     <!-- header starts -->
     <?php
-
     include 'php/header.php'
-
     ?>
     <!-- header ends -->
-
+    <div class="banner">
+        <h1 style="absolute; top: 10px;">Unlock Off Campus Opportunities</h1>
+    </div>
     <section id="hero-animated" class="hero-animated d-flex align-items-center">
         <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative" data-aos="zoom-out">
-            <img src="assets/img/hero-carousel/hero-carousel-1.svg" class="img-fluid animated">
-            <h2>Welcome to <span>Placement Cell</span></h2>
+            <h2>Welcome to <span>MyFuse</span></h2>
             <p>We Will Support You In Your Entire Placement Journey.</p>
             <div class="d-flex">
                 <a href="login.php" class="btn-get-started scrollto">Get Started</a>
-
             </div>
         </div>
     </section>
@@ -98,7 +108,7 @@ require_once("db.php");
                 <div class="row g-5">
 
                     <div class="col-lg-8 col-md-6 content d-flex flex-column justify-content-center order-last order-md-first">
-                        <h3>Placement <em>Portal</em> </h3>
+                        <h3>My <em>Fuse</em> </h3>
                         <p>The Placement Cell plays a crucial role in locating job
                             opportunities for under graduates and post graduates passing out from the college by
                             keeping in touch with reputed firms and industrial establishments.
@@ -156,7 +166,7 @@ require_once("db.php");
                             <div class="col-lg-8 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
                                 <h3>Objectives</h3>
                                 <p class="fst-itali">
-                                    Our Placement Portal serves various objectives:
+                                    MyFuse serves various objectives:
                                 </p>
                                 <ul>
                                     <li><i class="bi bi-check-circle-fill"></i> Developing the students to meet the Industries recruitment process.
@@ -310,7 +320,7 @@ require_once("db.php");
 
     <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
 
-    <button class="open-button is-size-5" onclick="openForm()" style="color:#6900FF !important;"><strong><i class="fas fa-comment-alt"></i> Chat</strong></button>
+    <!-- <button class="open-button is-size-5" onclick="openForm()" style="color:#6900FF !important;"><strong><i class="fas fa-comment-alt"></i> Chat</strong></button> -->
 
     <div class="chat-popup" id="myForm">
         <form class="form-container">

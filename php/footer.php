@@ -7,11 +7,9 @@
 
             <div class="d-flex flex-column align-items-center align-items-lg-start">
                 <div class="copyright">
-                    &copy; Copyright <strong><span>Davv</span></strong>. All Rights Reserved
+                <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
                 </div>
                 <div class="credits">
-
-                    <a href="https://bootstrapmade.com/">SCSIT-PlacementCell</a>
                 </div>
             </div>
 

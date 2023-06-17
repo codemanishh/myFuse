@@ -24,25 +24,29 @@ if (isset($_GET)) {
         $sum = $row1['hsc'] + $row1['ssc'] + $row1['ug'] + $row1['pg'];
         $total = ($sum / 4);
         $course1 = $row1['qualification'];
+        $stream1 = $row1['stream'];
     }
 
 
-    $sql = "SELECT maximumsalary, qualification FROM job_post WHERE id_jobpost='$_GET[id]'";
+    $sql = "SELECT maximumsalary, qualification, stream FROM job_post WHERE id_jobpost='$_GET[id]'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $eligibility = $row['maximumsalary'];
         $course2 = $row['qualification'];
+        $stream2 = $row['stream'];
+        $course2 = explode(",", $course2);
+        $stream2 = explode(",", $stream2);
         if ($total >= $eligibility) {
-            if ($course1 == $course2) {
+            if (in_array($course1, $course2) && in_array($stream1, $stream2) ) {
                 header("Location: ../view-job-post.php?id=$_GET[id]");
                 $_SESSION['status'] = "You are eligible for this drive, apply if you are interested.";
                 $_SESSION['status_code'] = "success";
                 exit();
             } else {
                 header("Location: ../view-job-post.php?id=$_GET[id]");
-                $_SESSION['status'] = "You are not eligible for this drive due to the course criteria. Check out other drives.";
+                $_SESSION['status'] = "You are not eligible for this drive due to the course/stream criteria. Check out other drives.";
                 $_SESSION['status_code'] = "success";
                 exit();
             }

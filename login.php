@@ -75,7 +75,7 @@
                         <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="assets/img/login/login-1.jpg" alt="blog">
                         <div class="p-6">
                             <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">Are you from the</h2>
-                            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Placement Cell ?</h1>
+                            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Company ?</h1>
                             <p class="leading-relaxed mb-3">The placement coordinators can log into their account from here.</p>
                             <div class="flex items-center flex-wrap">
                                 <a href="login-company.php" class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Login/Register

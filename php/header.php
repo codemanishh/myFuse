@@ -1,7 +1,9 @@
- <img src="assets/img/scs-logo-1.png" height=70px" style="height:70px" />
- <header id=" header" class="header fixed-top" data-scrollto-offset="0">
-     <div class="container-fluid d-flex align-items-center justify-content-between">
 
+
+ <header id=" header" class="header fixed-top" data-scrollto-offset="0" style="background-color: #D3FB52; height:80px;"> 
+ 
+     <div class="container-fluid d-flex align-items-center justify-content-between">
+     <img src="assets/img/MyFuse.png" height="60px" style="height:40px" />
          <a href="index.php" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
 
          </a>
@@ -15,7 +17,7 @@
 
                          <li><a href="admin/index.php">Admin Login</a></li>
                          <li><a href="login-candidates.php">Student Login</a></li>
-                         <li><a href="login-company.php">Placement Cell</a></li>
+                         <li><a href="login-company.php">Company</a></li>
 
 
                      </ul>
@@ -25,7 +27,7 @@
 
                          <!-- <li><a href="admin/index.php">Admin</a></li> -->
                          <li><a href="register-candidates.php">Students</a></li>
-                         <li><a href="register-company.php">Placement Cell</a></li>
+                         <li><a href="register-company.php">Company</a></li>
 
 
                      </ul>

@@ -17,7 +17,7 @@ require_once("../db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Placement Portal</title>
+  <title>MyFuse</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -69,7 +69,7 @@ require_once("../db.php");
                     <li><a href="job-applications.php"><i class="fa fa-file-o"></i> Drive Applications</a></li>
                     <li><a href="mailbox.php"><i class="fa fa-envelope"></i> Mailbox</a></li>
                     <li><a href="settings.php"><i class="fa fa-gear"></i> Settings</a></li>
-                    <li><a href="resume-database.php"><i class="fa fa-user"></i> Resume Database</a></li>
+                    <li><a href="resume-database.php"><i class="fa fa-user"></i> Scout Talents</a></li>
                     <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
                   </ul>
                   </ul>
@@ -157,8 +157,7 @@ require_once("../db.php");
 
     <footer class="main-footer" style="margin-left: 0px;">
       <div class="text-center">
-        <strong>Copyright &copy; 2022 <a href="scsit@Davv">Placement Portal</a>.</strong> All rights
-        reserved.
+      <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
       </div>
     </footer>
 

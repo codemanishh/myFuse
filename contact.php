@@ -6,7 +6,7 @@
 
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Placement Portal</title>
+    <title>MyFuse</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <!-- Favicons -->
@@ -55,18 +55,18 @@
 
     <!-- </header> -->
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact" style="margin-top:20px;">
         <div class="container">
 
             <div class="section-header">
                 <h2><strong>Contact Us</strong></h2>
-                <p>School of Computer Science and I.T, Davv, Indore.</p>
+                <p>MyFuse.in</p>
             </div>
 
         </div>
 
         <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.035781097398!2d75.87103241476291!3d22.689711885122687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fce62a06c98b%3A0x9df2fc5c91f45eb5!2sSCSIT%20-%20School%20of%20Computer%20Science%20%26%20Information%20Technology%2C%20DAVV!5e0!3m2!1sen!2sin!4v1648416719389!5m2!1sen!2sin" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.9948843290063!2d77.60361387423401!3d12.97217878734324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15f3579da689%3A0xf972e738f7954d5d!2sMyFuse.in!5e0!3m2!1sen!2sin!4v1686076060677!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div><!-- End Google Maps -->
 
         <div class="container">
@@ -83,7 +83,7 @@
                             <i class="bi bi-geo-alt flex-shrink-0"></i>
                             <div>
                                 <h4>Location:</h4>
-                                <p>SCSIT, DAVV, Takshashila campus, Khandwa Road, Indore.</p>
+                                <p>MyFuse.in Residency Rd, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560025</p>
                             </div>
                         </div><!-- End Info Item -->
 
@@ -91,7 +91,7 @@
                             <i class="bi bi-envelope flex-shrink-0"></i>
                             <div>
                                 <h4>Email:</h4>
-                                <p>scsdavvindore@gmail.com</p>
+                                <p>sample@email.com</p>
                             </div>
                         </div><!-- End Info Item -->
 

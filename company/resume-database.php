@@ -17,7 +17,7 @@ require_once("../db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Placement Portal</title>
+  <title>MyFuse</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -72,58 +72,175 @@ require_once("../db.php");
                     <li><a href="job-applications.php"><i class="fa fa-file-o"></i> Drive Applications</a></li>
                     <li><a href="mailbox.php"><i class="fa fa-envelope"></i> Mailbox</a></li>
                     <li><a href="settings.php"><i class="fa fa-gear"></i> Settings</a></li>
-                    <li class="active"><a href="resume-database.php"><i class="fa fa-user"></i> Resume Database</a></li>
+                    <li class="active"><a href="resume-database.php"><i class="fa fa-user"></i> Scout Talents</a></li>
                     <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
                   </ul>
                   </ul>
                 </div>
               </div>
             </div>
+            <?php
+              
+              //while($row = $result->fetch_assoc()){
+            ?> 
             <div class="col-md-9 bg-white padding-2">
               <h2><i>Talent Database</i></h2>
               <p>In this section you can download resume of all candidates who applied to your job posts</p>
-              <div class="row margin-top-20">
+              <div class="row margin-top-10">
                 <div class="col-md-12">
                   <div class="box-body table-responsive no-padding">
+                  <div class="container col-md-12">
+                  <h3 class="margin-bottom-10">Apply Filters</h3>
+                      <div class="row margin-top-10 margin-bottom-20 bg-white">
+                        <form action="" method="post">
+                            <div class="col-md-6">
+                                <div class="form-group" style="width:75%;">
+                                    <!-- <input class="form-control" type="text" id="collegeName" name="collegeName" placeholder="College Name"> -->
+                                    <select class="form-control" type="text" id="collegeName" name="collegeName" placeholder="College Name">
+                                    <option value='' selected="selected">Choose College Name</option>
+                                      <?php
+                                        $sql = "SELECT DISTINCT college FROM users";
+                                        $result = $conn->query($sql);
+                                        while($row = $result->fetch_assoc()){
+                                          //echo "<option value='strtolower($row['college'])'>$row['college']</option>";
+                                        echo "<option value=".$row['college'].">".$row['college']."</option>";
+                                      } ?>
+                                     <select> 
+                                </div>
+                                <?php //}
+                                ?>
+                                <div class="form-group" style="width:75%;">
+                                    <input class="form-control" type="text" id="cgpa" name="cgpa" placeholder="Minimum Cgpa">
+                                </div>
+                              </div>
+                            <div class="col-md-6">
+                                <div class="form-group" style="width:75%;">
+                                    <!-- <input class="form-control" type="text" id="gender" name="gender" placeholder="Gender"> -->
+                                    <select class="form-control" type="text" id="gender" name="gender" placeholder="gender">
+                                    <option value='' selected="selected">Choose Gender</option>
+                                      <?php
+                                        $genderoptions = array("Male", "Female", "Others");
+                                        foreach($genderoptions as $value){
+                                          //echo "<option value='strtolower($row['college'])'>$row['college']</option>";
+                                        echo "<option value=".$value.">".$value."</option>";
+                                      } ?> 
+                                     <select> 
+                                </div>
+                                <div class="form-group" style="width:75%;">
+                                    <!-- <input class="form-control" type="text" id="qualification" name="qualification" placeholder="Qualification"> -->
+                                    <select class="form-control" type="text" id="qualification" name="qualification" placeholder="Qualification">
+                                    <option value='' selected="selected">Choose Highest Qualification</option>
+                                      <?php
+                                        $qualificationoptions = array("B.E",
+                                        "B.Tech",
+                                        "B.Arch",
+                                        "B.Sc",
+                                        "B.S.E",
+                                        "B.Eng",
+                                        "B.Eng",
+                                        "B.Sc",
+                                        "M.E",
+                                        "M.TECH",
+                                        "MCA",
+                                        "Matriculation - X", "Intermediate - XII");
+                                        
+                                        foreach($qualificationoptions as $value){
+                                          //echo "<option value='strtolower($row['college'])'>$row['college']</option>";
+                                        echo "<option value=".$value.">".$value."</option>";
+                                      } ?> 
+                                     <select> 
+                                </div>
+                            <div>
+                            <input class="btn btn-flat btn-success" type="submit" name="submit" value="Update">
+                        </form>
+                  </div>
+                </div>
+                
                     <table id="example2" class="table table-hover">
                       <thead>
                         <th>Candidate</th>
-                        <th>Highest Qualification</th>
+                        <th>Qualification</th>
                         <th>Skills</th>
-                        <th>City</th>
-                        <th>State</th>
-                        <th>Download Resume</th>
+                        <th>Gender</th>
+                        <th>College Name</th>
+                        <th>CGPA</th>
+                        <th>Resume</th>
                       </thead>
                       <tbody>
+                          
                         <?php
-                        $sql = "SELECT users.* FROM job_post INNER JOIN apply_job_post ON job_post.id_jobpost=apply_job_post.id_jobpost  INNER JOIN users ON users.id_user=apply_job_post.id_user WHERE apply_job_post.id_company='$_SESSION[id_company]' GROUP BY users.id_user";
+                        $collegeName = '';
+                        $cgpa = '';
+                        $gender = '';
+                        $qualification = '';
+
+                       // $sql = "SELECT users.* FROM job_post INNER JOIN apply_job_post ON job_post.id_jobpost=apply_job_post.id_jobpost  INNER JOIN users ON users.id_user=apply_job_post.id_user WHERE apply_job_post.id_company='$_SESSION[id_company]' GROUP BY users.id_user";
+                        $sql = "SELECT * from users";
                         $result = $conn->query($sql);
-
-                        if ($result->num_rows > 0) {
-                          while ($row = $result->fetch_assoc()) {
-
-                            $skills = $row['skills'];
-                            $skills = explode(',', $skills);
+                        
+                        //$dummy = $result;
+                        //echo $result;
+                        // if ($result->num_rows > 0) {
+                        //   $arrayOfArray = array();
+                        //   while($row1 = $result->fetch_assoc()){
+                        //     array_push($arrayOfArray,$row1);
+                        //   }
+                         
+                        if (isset($_POST['submit'])) {
+                            $collegeName = $_POST['collegeName'];
+                            $cgpa = $_POST['cgpa'];
+                            $gender = $_POST['gender'];
+                            $qualification = $_POST['qualification'];
+                            echo $qualification;
+                        }
+                          while($row = $result->fetch_assoc()) 
+                          {
+                            if(($row['qualification']==$qualification || $qualification == '') &&
+                               ($row['gender']==$gender || $gender == '') &&
+                               ($row['ug']>=$cgpa || $cgpa == '') &&
+                               ($row['college']==$collegeName || $collegeName== '')
+                            ){
                         ?>
                             <tr>
                               <td><?php echo $row['firstname'] . ' ' . $row['lastname']; ?></td>
-                              <td><?php echo $row['qualification']; ?></td>
+                              <td>
+                                <?php 
+                                    echo $row['qualification']; ?>
+                              </td>
                               <td>
                                 <?php
+                                $skills = $row['skills'];
+                                $skills = explode(',', $skills);
                                 foreach ($skills as $value) {
                                   echo ' <span class="label label-success">' . $value . '</span>';
                                 }
                                 ?>
                               </td>
-                              <td><?php echo $row['city']; ?></td>
-                              <td><?php echo $row['state']; ?></td>
+                              <td><?php echo $row['gender']; ?></td>
+                              <td><?php echo $row['college']; ?></td>
+                              <td><?php echo $row['ug']; ?></td>
                               <td><a href="../uploads/resume/<?php echo $row['resume']; ?> " download="<?php echo $row['firstname'] . ' Resume'; ?>"><i class="fa fa-file-pdf-o"></i></a></td>
+                              
+                                <?php 
+                                $sql9 = "SELECT email_access FROM company WHERE id_company={$_SESSION['id_company']}";
+                                $result9 = $conn->query($sql9);
+                                $row9 = $result9->fetch_assoc(); 
+                                if($row9['email_access'] == "Yes"){ 
+                                  ?>
+                                  <td>
+                                <form  method="post" action="test-send-email.php" target="_blank">
+                                  <input type="hidden" name = "id" value=<?php echo $row['id_user']?> > 
+                                  <button type ="submit" class='btn btn-flat btn-primary'>Send mail<button>
+                                 </form>
+                              </td>
+                              <?php } ?>
                             </tr>
 
                         <?php
 
                           }
                         }
+                        
                         ?>
 
                       </tbody>
@@ -131,7 +248,7 @@ require_once("../db.php");
                   </div>
                 </div>
               </div>
-
+              
             </div>
           </div>
         </div>
@@ -143,8 +260,7 @@ require_once("../db.php");
 
     <footer class="main-footer" style="margin-left: 0px;">
       <div class="text-center">
-        <strong>Copyright &copy; 2022 <a href="scsit@Davv">Placement Portal</a>.</strong> All rights
-        reserved.
+      <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
       </div>
     </footer>
 

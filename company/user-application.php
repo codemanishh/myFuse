@@ -26,7 +26,7 @@ if ($result->num_rows == 0) {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Placement Portal</title>
+  <title>MyFuse</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -81,7 +81,7 @@ if ($result->num_rows == 0) {
                     <li><a href="job-applications.php"><i class="fa fa-file-o"></i> Drive Applications</a></li>
                     <li><a href="mailbox.php"><i class="fa fa-envelope"></i> Mailbox</a></li>
                     <li><a href="settings.php"><i class="fa fa-gear"></i> Settings</a></li>
-                    <li><a href="resume-database.php"><i class="fa fa-user"></i> Resume Database</a></li>
+                    <li><a href="resume-database.php"><i class="fa fa-user"></i> Scout Talents</a></li>
                     <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
                   </ul>
                   </ul>
@@ -114,9 +114,13 @@ if ($result->num_rows == 0) {
                         echo '<br>';
                         echo 'City: ' . $row['city'];
                         echo '<br>';
-                        if ($row['resume'] != "") {
-                          echo '<a href="../uploads/resume/' . $row['resume'] . '" class="btn btn-info" download="Resume">Download Resume</a>';
-                        }
+                        $filename = "../uploads/resume/" . $row['resume'] . "pdf";
+                        
+                        
+                          if ($row['resume'] != "") {
+                            echo '<a href="../uploads/resume/' . $row['resume'] . '" class="btn btn-info" download="Resume">Download Resume</a>';
+                          }
+                        
                         echo '<br>';
                         echo '<br>';
                         echo '<br>';
@@ -129,6 +133,13 @@ if ($result->num_rows == 0) {
                           <div class="col-md-3 pull-right">
                             <a href="under-review.php?id=<?php echo $row['id_user']; ?>&id_jobpost=<?php echo $_GET['id_jobpost']; ?>" class="btn btn-success">Mark as Placed</a>
                           </div>
+                          <div class="col-md-3 pull-right">
+                          <form  method="post" action="test-send-email.php" target="_blank">
+                                  <input type="hidden" name = "id" value=<?php echo $row['id_user']?> > 
+                                  <button type ="submit" class='btn btn-flat btn-primary'>Send Interview email<button>
+                          </form>
+                            <!-- <a href="under-review.php?id=<?php echo $row['id_user']; ?>&id_jobpost=<?php echo $_GET['id_jobpost']; ?>" class="btn btn-primary">Send Interview Mail</a> -->
+                          </div>
                         </div>
                       </div>
 
@@ -140,65 +151,7 @@ if ($result->num_rows == 0) {
                   ?>
                 </div>
 
-                <div class="col-md-9 bg-white padding-2">
-
-                  <h3>Candidates Database</h3>
-                  <div class="row margin-top-20">
-                    <div class="col-md-12">
-                      <div class="box-body table-responsive no-padding">
-                        <table id="example2" class="table table-hover">
-                          <thead>
-                            <th>Candidate</th>
-                            <th>Highest Qualification</th>
-                            <th>Skills</th>
-                            <th>City</th>
-                            <th>State</th>
-
-                          </thead>
-                          <tbody>
-                            <?php
-                            $sql = "SELECT * FROM users";
-                            $result = $conn->query($sql);
-
-                            if ($result->num_rows > 0) {
-                              while ($row = $result->fetch_assoc()) {
-
-                                $skills = $row['skills'];
-                                $skills = explode(',', $skills);
-                            ?>
-                                <tr>
-                                  <td><?php echo $row['firstname'] . ' ' . $row['lastname']; ?></td>
-                                  <td><?php echo $row['qualification']; ?></td>
-                                  <td>
-                                    <?php
-                                    foreach ($skills as $value) {
-                                      echo ' <span class="label label-success">' . $value . '</span>';
-                                    }
-                                    ?>
-                                  </td>
-                                  <td><?php echo $row['city']; ?></td>
-                                  <td><?php echo $row['state']; ?></td>
-                                  <?php if ($row['resume'] != '') { ?>
-
-                                  <?php } ?>
-
-
-
-                                </tr>
-
-                            <?php
-
-                              }
-                            }
-                            ?>
-
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
+                
 
               </div>
       </section>
@@ -211,8 +164,7 @@ if ($result->num_rows == 0) {
 
     <footer class="main-footer" style="margin-left: 0px;">
       <div class="text-center">
-        <strong>Copyright &copy; 2022 <a href="scsit@Davv">Placement Portal</a>.</strong> All rights
-        reserved.
+      <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
       </div>
     </footer>
 

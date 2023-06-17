@@ -15,7 +15,7 @@ require_once("../db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Placement Portal</title>
+  <title>MyFuse</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -66,7 +66,7 @@ require_once("../db.php");
                     <li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
                     <li><a href="active-jobs.php"><i class="fa fa-briefcase"></i> Active Drives</a></li>
                     <li><a href="applications.php"><i class="fa fa-address-card-o"></i> Students Profile</a></li>
-                    <li class="active"><a href="companies.php"><i class="fa fa-arrow-circle-o-right"></i> Co - Ordinators</a></li>
+                    <li class="active"><a href="companies.php"><i class="fa fa-arrow-circle-o-right"></i> Companies </a></li>
                     <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
                   </ul>
                 </div>
@@ -74,19 +74,20 @@ require_once("../db.php");
             </div>
             <div class="col-md-9 bg-white padding-2">
 
-              <h3>Coordinators</h3>
+              <h3>Company Database</h3>
               <div class="row margin-top-20">
                 <div class="col-md-12">
                   <div class="box-body table-responsive no-padding">
                     <table id="example2" class="table table-hover">
                       <thead>
                         <!-- <th>Company Name</th> -->
-                        <th>Account Creator Name</th>
+                        <th>Company SPOC</th>
                         <th>Email</th>
                         <th>Phone</th>
                         <th>City</th>
                         <th>State</th>
-                        <th>Country</th>
+                        <th>Company Name</th>
+                        <th>Email Access</th>
                         <th>Status</th>
                         <th>Delete</th>
                       </thead>
@@ -106,7 +107,9 @@ require_once("../db.php");
                               <td><?php echo $row['contactno']; ?></td>
                               <td><?php echo $row['city']; ?></td>
                               <td><?php echo $row['state']; ?></td>
-                              <td><?php echo $row['country']; ?></td>
+                              <td><?php echo $row['companyname']; ?></td>
+                              <td><?php echo $row['email_access']; ?></td>
+
                               <td>
                                 <?php
                                 if ($row['active'] == '1') {
@@ -147,8 +150,7 @@ require_once("../db.php");
 
     <footer class="main-footer" style="margin-left: 0px;">
       <div class="text-center">
-        <strong>Copyright &copy; 2022 <a href="learningfromscratch.online">Placement Portal</a>.</strong> All rights
-        reserved.
+        <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
       </div>
     </footer>
 

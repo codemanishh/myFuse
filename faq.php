@@ -19,7 +19,7 @@ require_once("db.php");
     include 'php/head.php'
 
     ?>
-    <title>Placement Portal</title>
+    <title>MyFuse</title>
 </head>
 
 <body>
@@ -38,7 +38,7 @@ require_once("db.php");
                     <div class="content px-xl-5">
                         <h3>Frequently Asked <strong>Questions</strong></h3>
                         <p>
-                            Any queries or doubts regarding the<strong> Placement Portal </strong> will be addressed over here students might get confused regarding the placement portal and may have may have queries to be solved.
+                            Any queries or doubts regarding the<strong> MyFuse </strong> will be addressed over here students might get confused regarding the MyFuse and may have may have queries to be solved.
                     </div>
 
                     <div class="accordion accordion-flush px-xl-5" id="faqlist">

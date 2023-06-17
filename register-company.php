@@ -14,7 +14,7 @@ require_once("db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Placement Portal</title>
+  <title>MyFuse</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -54,23 +54,23 @@ require_once("db.php");
       <section class="content-header">
         <div class="container">
           <div class="row latest-job margin-top-50 margin-bottom-20 bg-white">
-            <h3 class="text-center margin-bottom-20">Placement Cell Profile</h3>
+            <h3 class="text-center margin-bottom-20">Company Profile</h3>
             <form method="post" id="registerCompanies" action="addcompany.php" enctype="multipart/form-data">
               <div class="col-md-6 latest-job ">
                 <div class="form-group">
-                  <input class="form-control input-lg" type="text" name="name" placeholder="Full Name" required>
+                  <input class="form-control input-lg" type="text" name="name" placeholder="Enter Your Name" required>
                 </div>
                 <div class="form-group">
-                  <input class="form-control input-lg" type="text" name="companyname" placeholder="Designation">
+                  <input class="form-control input-lg" type="text" name="companyname" placeholder="Enter Company Name">
                 </div>
                 <div class="form-group">
                   <input class="form-control input-lg" type="text" name="website" placeholder="Website">
                 </div>
                 <div class="form-group">
-                  <input class="form-control input-lg" type="text" name="email" placeholder="Email" required>
+                  <input class="form-control input-lg" type="email" name="email" placeholder="Email" required>
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control input-lg" rows="4" name="aboutme" placeholder="Roles & Responsibility"></textarea>
+                  <textarea class="form-control input-lg" rows="4" name="aboutme" placeholder="About the Company"></textarea>
                 </div>
                 <div class="form-group checkbox">
                   <label><input type="checkbox" required> I accept terms & conditions</label>
@@ -140,7 +140,14 @@ require_once("db.php");
                   </select>
                 </div>
                 <div class="form-group">
-                  <label>Upload your profile picture</label>
+                <label>Request Mailing Access:
+                <input class="form-control" list="option" name="email_access" /></label>
+                <datalist id="option">
+                  <option value="Yes">
+                  <option value="No">
+                </datalist>
+                <div class="form-group">
+                  <label>Upload Company Logo</label>
                   <input type="file" name="image" class="form-control input-lg">
                 </div>
               </div>
@@ -157,8 +164,7 @@ require_once("db.php");
 
     <footer class="main-footer" style="margin-left: 0px;">
       <div class="text-center">
-        <strong>Copyright &copy; 2022 <a href="learningfromscratch.online">Placement Portal</a>.</strong> All rights
-        reserved.
+        <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
       </div>
     </footer>
 

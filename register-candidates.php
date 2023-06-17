@@ -14,7 +14,7 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Placement Portal</title>
+  <title>MyFuse</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -54,6 +54,15 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
                 <div class="form-group">
                   <input class="form-control input-lg" type="text" id="lname" name="lname" placeholder="Last Name *" required>
                 </div>
+                
+                <div class="form-group">
+                  <input class="form-control input-lg" list="option" id= "gender" name="gender" placeholder = "Gender *" required/></label>
+                  <datalist id="option">
+                    <option value="Male">
+                    <option value="Female">
+                    <option value="Others">  
+                  </datalist>
+                </div>
                 <div class="form-group">
                   <input class="form-control input-lg" type="text" id="email" name="email" placeholder="Email *" required>
                 </div>
@@ -72,10 +81,49 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
                   <input class="form-control input-lg" type="date" id="passingyear" name="passingyear" placeholder="Passing Year">
                 </div>
                 <div class="form-group">
-                  <input class="form-control input-lg" type="text" id="qualification" name="qualification" placeholder="Highest Qualification">
+                  <!-- <input class="form-control input-lg" type="text" id="qualification" name="qualification" placeholder="Highest Qualification"> -->
+                  <select class="form-control input-lg" type="text" id="qualification" name="qualification" placeholder="Highest Qualification">
+                                    <option value='' selected="selected">Choose Highest Qualification</option>
+                                      <?php
+                                        $qualificationoptions = array("B.E",
+                                        "B.Tech",
+                                        "B.Arch",
+                                        "B.Sc",
+                                        "B.S.E",
+                                        "B.Eng",
+                                        "B.Eng",
+                                        "B.Sc",
+                                        "M.E",
+                                        "M.TECH",
+                                        "MCA",
+                                        "Matriculation - X", "Intermediate - XII");
+                                        
+                                        foreach($qualificationoptions as $value){
+                                          //echo "<option value='strtolower($row['college'])'>$row['college']</option>";
+                                        echo "<option value=".$value.">".$value."</option>";
+                                      } ?> 
+                  <select> 
                 </div>
                 <div class="form-group">
-                  <input class="form-control input-lg" type="text" id="stream" name="stream" placeholder="Stream">
+                
+                                  <select class="form-control input-lg" type="text" id="stream" name="stream" placeholder="Stream">
+                                    <option value='' selected="selected">Choose Stream</option>
+                                      <?php
+                                        $qualificationoptions = array("CSE",
+                                        "ISE",
+                                        "ECE",
+                                        "ME",
+                                        "EEE",
+                                        "CIVIL",
+                                        "BioTe Technology"
+                                        );
+                                        
+                                        foreach($qualificationoptions as $value){
+                                          //echo "<option value='strtolower($row['college'])'>$row['college']</option>";
+                                        echo "<option value=".$value.">".$value."</option>";
+                                      } ?> 
+                  <select> 
+                  <!-- <input class="form-control input-lg" type="text" id="stream" name="stream" placeholder="Stream"> -->
                 </div>
                 <div class="form-group checkbox">
                   <label><input type="checkbox"> I accept terms & conditions</label>
@@ -114,6 +162,9 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
                   Password Mismatch!!
                 </div>
                 <div class="form-group">
+                  <input class="form-control input-lg" type="text" id="collegename" name="collegename" placeholder="College Name *" required>
+                </div>
+                <div class="form-group">
                   <input class="form-control input-lg" type="text" id="contactno" name="contactno" minlength="10" maxlength="10" onkeypress="return validatePhone(event);" placeholder="Phone Number">
                 </div>
                 <div class="form-group">
@@ -150,8 +201,7 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
 
     <footer class="main-footer" style="margin-left: 0px;">
       <div class="text-center">
-        <strong>Copyright &copy; 2022 <a href="learningfromscratch.online">Placement Portal</a>.</strong> All rights
-        reserved.
+      <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
       </div>
     </footer>
 

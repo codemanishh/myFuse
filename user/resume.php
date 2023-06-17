@@ -22,66 +22,15 @@ require_once("../db.php");
 
 
     <link rel="stylesheet" href="../css/style.css">
-    <title>Placement Portal</title>
+    <title>MyFuse</title>
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="n1">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Placement Portal</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse mx-8" id="navbarNav">
-                <ul class="navbar-nav" style="margin:auto">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.php">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="resume.php">Create Resume</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="notice.php">Notice</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../jobs.php" class="nav-link">Active Drives</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../logout.php">Log Out</a>
-                    </li>
-                    <style>
-                        .navbar-expand-lg .navbar-nav {
-                            margin-top: -6px;
-                        }
-
-                        .nav-link {
-                            color: #b3c6e0;
-                        }
-
-                        .nav-link:hover {
-                            color: #482ff7;
-                        }
-
-                        li {
-                            margin-top: 1px;
-                            margin-left: 30px;
-                            padding-bottom: 20px;
-                            color: #b3c6e0;
-                            hover
-                        }
-
-                        .navbar-brand {
-                            margin-left: 300px;
-                        }
-                    </style>
-                </ul>
-            </div>
-        </div>
-
-
-    </nav>
-
-
+<body class="hold-transition skin-green sidebar-mini">
+    
+<div class="wrapper">
+    <?php
+    include 'header.php'
+    ?>
 
 
     <div class="container" id="cv-form">

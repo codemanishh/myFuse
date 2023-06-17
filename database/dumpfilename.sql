@@ -240,7 +240,7 @@ CREATE TABLE `notice` (
 
 LOCK TABLES `notice` WRITE;
 /*!40000 ALTER TABLE `notice` DISABLE KEYS */;
-INSERT INTO `notice` VALUES (23,'Placement Result for Accenture','Narendra Kumar','All Students','0',NULL,'2022-05-10 12:53:43'),(24,'Placement Result for Cognizant','Amit','Co-ordinators','0',NULL,'2022-05-10 12:54:06'),(33,'Amit','sss','All Students','628a5c81308f3.','1b01d853966c8ed5fe8afa9a1ac05800','2022-05-22 21:23:37');
+INSERT INTO `notice` VALUES (23,'Placement Result for Accenture','Narendra Kumar','All Students','0',NULL,'2022-05-10 12:53:43'),(24,'Placement Result for Cognizant','Amit','Companies','0',NULL,'2022-05-10 12:54:06'),(33,'Amit','sss','All Students','628a5c81308f3.','1b01d853966c8ed5fe8afa9a1ac05800','2022-05-22 21:23:37');
 /*!40000 ALTER TABLE `notice` ENABLE KEYS */;
 UNLOCK TABLES;
 

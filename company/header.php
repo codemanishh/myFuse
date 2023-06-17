@@ -1,7 +1,8 @@
 <!-- Main header -->
-<header class="header">
+<header class="header" style="background-color:#D3FB52">
     <nav class="navbar">
-        <a href="#" class="nav-logo">Placement Portal</a>
+            <a href="#" class="nav-logo"><img src="../assets/img/MyFuse.png" height="40px" style="height:40px" />
+
         <ul class="nav-menu">
             <li class="nav-item">
                 <a href="index.php" class="nav-link">Dashboard</a>
@@ -59,7 +60,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 1rem 1.5rem;
-        background-color: #2d2a2e;
+        /* background-color: #2d2a2e; */
     }
 
     .hamburger {
@@ -90,7 +91,7 @@
     .nav-link {
         font-size: 1.6rem;
         font-weight: 400;
-        color: #b3c6e0;
+        color: black;
     }
 
     .nav-link:hover {

@@ -38,7 +38,7 @@ if (isset($_POST)) {
 
 		$base = basename($_FILES['resume']['name']);
 
-		$resumeFileType = pathinfo($base, PATHINFO_EXTENSION);
+		$resumeFileType = "pdf";
 
 		$file = uniqid() . "." . $resumeFileType;
 

@@ -17,7 +17,7 @@ require_once("../db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Placement Portal</title>
+  <title>MyFuse</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -62,20 +62,32 @@ require_once("../db.php");
                   <h3 class="box-title">Welcome <b><?php echo $_SESSION['name']; ?></b></h3>
                 </div>
                 <div class="box-body no-padding">
+                <?php
+                        $sql = "SELECT email_access FROM company WHERE id_company={$_SESSION['id_company']}";
+                        $result = $conn->query($sql);
+                        $row = $result->fetch_assoc(); 
+                ?>
                   <ul class="nav nav-pills nav-stacked">
                     <li class="active"><a href="index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
                     <li><a href="edit-company.php"><i class="fa fa-tv"></i> Update Profile</a></li>
                     <li><a href="create-job-post.php"><i class="fa fa-file-o"></i> Post Drive</a></li>
                     <li><a href="my-job-post.php"><i class="fa fa-file-o"></i> Current Drives</a></li>
                     <li><a href="job-applications.php"><i class="fa fa-file-o"></i> Drive Applications</a></li>
-                    <li><a href="mailbox.php"><i class="fa fa-envelope"></i> Mailbox</a></li>
+                    <?php if($row['email_access'] == "Yes"){ 
+                      ?>
+                      <li><a href="mailbox.php"><i class="fa fa-envelope"></i> Mailbox</a></li>
+                      
+                    <?php } ?>
+                    
                     <li><a href="settings.php"><i class="fa fa-gear"></i> Settings</a></li>
-                    <li><a href="resume-database.php"><i class="fa fa-user"></i> Resume Database</a></li>
+                    <li><a href="resume-database.php"><i class="fa fa-user"></i> Scout Talents</a></li>
                     <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
                   </ul>
                 </div>
               </div>
             </div>
+             <?php//}
+            ?> 
             <div class="col-md-9 bg-white padding-2">
 
               <h3>Overview</h3>
@@ -137,7 +149,7 @@ require_once("../db.php");
     <!-- /.content-wrapper -->
     <footer class="main-footer" style="margin-left: 0px;">
       <div class="text-center">
-        <strong>Copyright &copy; 2022 <a href="scsit@Davv">Placement Portal</a>.</strong> All rights
+        <strong>Copyright &copy; 2023 <a href="scsit@Davv">Company Portal</a>.</strong> All rights
         reserved.
       </div>
     </footer>

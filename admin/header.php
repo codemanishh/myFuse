@@ -1,7 +1,8 @@
 <!-- Main header -->
-<header class="header">
+<header class="header" style="background-color: #D3FB52;">
     <nav class="navbar">
-        <a href="#" class="nav-logo">Placement Portal</a>
+    <!-- <img src="../assets/img/MyFuse2.png" height="70px" style="height:70px" /> -->
+        <a href="#" class="nav-logo"><img src="../assets/img/MyFuse.png" height="40px" style="height:40px" /></a>
         <ul class="nav-menu">
             <li class="nav-item">
                 <a href="index.php" class="nav-link">Dashboard</a>

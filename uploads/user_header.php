@@ -1,7 +1,8 @@
 <!-- Main header -->
 <header class="header">
     <nav class="navbar">
-        <a href="#" class="nav-logo">Placement Portal</a>
+                    <a href="#" class="nav-logo"><img src="../assets/img/MyFuse2.png" height="60px" style="height:60px" /></a>
+
         <ul class="nav-menu">
             <ul class="nav-menu">
                 <li class="nav-item">

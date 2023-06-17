@@ -13,13 +13,16 @@ require_once("../db.php");
 
 $sql = "SELECT * FROM mailbox WHERE id_mailbox='$_GET[id_mail]' AND (id_fromuser='$_SESSION[id_company]' OR id_touser='$_SESSION[id_company]')";
 $result = $conn->query($sql);
+$from = 1;
 if ($result->num_rows >  0) {
   $row = $result->fetch_assoc();
   if ($row['fromuser'] == "company") {
+    $from = 1;
     $sql1 = "SELECT * FROM company WHERE id_company='$row[id_fromuser]'";
     $result1 = $conn->query($sql1);
     if ($result1->num_rows >  0) {
       $rowCompany = $result1->fetch_assoc();
+      
     }
     $sql2 = "SELECT * FROM users WHERE id_user='$row[id_touser]'";
     $result2 = $conn->query($sql2);
@@ -27,6 +30,7 @@ if ($result->num_rows >  0) {
       $rowUser = $result2->fetch_assoc();
     }
   } else {
+    $from = 2;
     $sql1 = "SELECT * FROM company WHERE id_company='$row[id_touser]'";
     $result1 = $conn->query($sql1);
     if ($result1->num_rows >  0) {
@@ -48,7 +52,7 @@ if ($result->num_rows >  0) {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Placement Portal</title>
+  <title>MyFuse</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -111,7 +115,7 @@ if ($result->num_rows >  0) {
                     <li><a href="job-applications.php"><i class="fa fa-file-o"></i> Drive Applications</a></li>
                     <li><a href="mailbox.php"><i class="fa fa-envelope"></i> Mailbox</a></li>
                     <li><a href="settings.php"><i class="fa fa-gear"></i> Settings</a></li>
-                    <li><a href="resume-database.php"><i class="fa fa-user"></i> Resume Database</a></li>
+                    <li><a href="resume-database.php"><i class="fa fa-user"></i> Scout Talents</a></li>
                     <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
                   </ul>
                   </ul>
@@ -128,7 +132,11 @@ if ($result->num_rows >  0) {
                       <div class="box-body no-padding">
                         <div class="mailbox-read-info">
                           <h3><?php echo $row['subject']; ?></h3>
-                          <h5>From: <?php echo $rowCompany['companyname']; ?>
+                          <h5>From: <?php if ($from == 1) {
+                                          echo $rowCompany['companyname'];
+                                        } else {
+                                          echo $rowUser['firstname'];
+                                        } ?>
                             <span class="mailbox-read-time pull-right"><?php echo date("d-M-Y h:i a", strtotime($row['createdAt'])); ?></span>
                           </h5>
                         </div>
@@ -211,8 +219,7 @@ if ($result->num_rows >  0) {
 
     <footer class="main-footer" style="margin-left: 0px;">
       <div class="text-center">
-        <strong>Copyright &copy; 2022 <a href="scsit@Davv">Placement Portal</a>.</strong> All rights
-        reserved.
+      <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
       </div>
     </footer>
 

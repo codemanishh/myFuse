@@ -20,17 +20,20 @@ if (isset($_POST)) {
 
 
 
-	$stmt = $conn->prepare("INSERT INTO job_post(id_company, jobtitle, description, minimumsalary, maximumsalary, experience, qualification) VALUES (?,?, ?, ?, ?, ?, ?)");
+	$stmt = $conn->prepare("INSERT INTO job_post(id_company, jobtitle, description, minimumsalary, maximumsalary, experience, qualification, stream) VALUES (?,?, ?, ?, ?, ?, ?, ?)");
 
-	$stmt->bind_param("issssss", $_SESSION['id_company'], $jobtitle, $description, $minimumsalary, $maximumsalary, $experience, $qualification);
+	$stmt->bind_param("isssssss", $_SESSION['id_company'], $jobtitle, $description, $minimumsalary, $maximumsalary, $experience, $qualification, $stream);
 
 	$jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
 	$description = mysqli_real_escape_string($conn, $_POST['description']);
 	$minimumsalary = mysqli_real_escape_string($conn, $_POST['minimumsalary']);
 	$maximumsalary = mysqli_real_escape_string($conn, $_POST['maximumsalary']);
 	$experience = mysqli_real_escape_string($conn, $_POST['experience']);
-	$qualification = mysqli_real_escape_string($conn, $_POST['qualification']);
-
+	//$qualification = implode(" ", mysqli_real_escape_string($conn, $_POST['qualification']));
+	$qualification = implode(",", $_POST['qualification']);
+	$stream = implode(",", $_POST['stream']);
+	//$qualification = mysqli_real_escape_string($conn, $qualificationStr);
+	//$stream = mysqli_real_escape_string($conn, $_POST['stream']);
 
 	if ($stmt->execute()) {
 		//If data Inserted successfully then redirect to dashboard

@@ -11,7 +11,7 @@ require_once("db.php");
 
 <head>
 
-    <title>Placement Portal</title>
+    <title>MyFuse</title>
 
 
     <?php

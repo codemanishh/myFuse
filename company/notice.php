@@ -15,7 +15,7 @@ require_once("../db.php");
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Placement Portal</title>
+    <title>MyFuse</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -68,10 +68,6 @@ require_once("../db.php");
                                             <tr>
                                                 <th>Subject</th>
                                                 <th>Notice</th>
-                                                <th>Attachment</th>
-
-
-
                                                 <th>Date and Time</th>
                                             </tr>
                                         </thead>
@@ -80,7 +76,7 @@ require_once("../db.php");
 
                                             <?php
 
-                                            $sql = "SELECT * FROM notice ";
+                                            $sql = "SELECT * FROM notice Where audience = 'Companies'";
 
                                             $result = $conn->query($sql);
 
@@ -91,11 +87,11 @@ require_once("../db.php");
                                             ?>
                                                     <td><?php echo $row['subject']; ?></td>
                                                     <td><?php echo $row['notice']; ?></td>
-                                                    <?php if ($row['resume'] != '') { ?>
-                                                        <td><a href="../uploads/resume/<?php echo $row['resume']; ?>" download="<?php echo 'Notice'; ?>"><i class="fa fa-file"></i></a></td>
-                                                    <?php } else { ?>
+                                                    <!-- <?php //if ($row['resume'] != '') { ?>
+                                                        <td><a href="../uploads/resume/<?php// echo $row['resume']; ?>" download="<?php //echo 'Notice'; ?>"><i class="fa fa-file"></i></a></td>
+                                                    <?php //} else { ?>
                                                         <td>No Resume Uploaded</td>
-                                                    <?php } ?>
+                                                    <?php// } ?> -->
 
                                                     <td><?php echo $row['date']; ?></td>
 
@@ -132,8 +128,7 @@ require_once("../db.php");
 
     <footer class="main-footer" style="margin-left: 0px;">
         <div class="text-center">
-            <strong>Copyright &copy; 2022 <a href="#">Placement Portal</a>.</strong> All rights
-            reserved.
+        <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
         </div>
     </footer>
 

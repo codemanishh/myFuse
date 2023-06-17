@@ -20,43 +20,44 @@ if (isset($_POST['submit'])) {
 
 
     //Folder where you want to save your resume. THIS FOLDER MUST BE CREATED BEFORE TRYING
-    $folder_dir = "../uploads/resume/";
+    // $folder_dir = "../uploads/resume/";
 
-    //Getting Basename of file. So if your file location is Documents/New Folder/myResume.pdf then base name will return myResume.pdf
-    $base = basename($_FILES['resume']['name']);
+    // //Getting Basename of file. So if your file location is Documents/New Folder/myResume.pdf then base name will return myResume.pdf
+
+    // $base = basename($_FILES['resume']['name']);
 
     //This will get us extension of your file. So myResume.pdf will return pdf. If it was resume.doc then this will return doc.
-    $resumeFileType = pathinfo($base, PATHINFO_EXTENSION);
+   // $resumeFileType = pathinfo($base, PATHINFO_EXTENSION);
 
     //Setting a random non repeatable file name. Uniqid will create a unique name based on current timestamp. We are using this because no two files can be of same name as it will overwrite.
-    $file = uniqid() . "." . $resumeFileType;
+    //$file = uniqid() . "." . $resumeFileType;
 
     //This is where your files will be saved so in this case it will be uploads/resume/newfilename
-    $filename = $folder_dir . $file;
+    //$filename = $folder_dir . $file;
 
     //We check if file is saved to our temp location or not.
-    if (file_exists($_FILES['resume']['tmp_name'])) {
+    // if (file_exists($_FILES['resume']['tmp_name'])) {
 
 
 
 
-        move_uploaded_file(
-            $_FILES["resume"]["tmp_name"],
-            $filename
-        );
-    }
+    //     move_uploaded_file(
+    //         $_FILES["resume"]["tmp_name"],
+    //         $filename
+    //     );
+    // }
 
 
 
 
-    $hash = md5(uniqid());
+    //$hash = md5(uniqid());
 
 
 
 
 
 
-    $sql = "INSERT INTO notice(subject,notice,audience,resume, hash,`date`) VALUES ('$subject','$notice','$audience','$file', '$hash',now())";
+    $sql = "INSERT INTO notice(subject,notice,audience,`date`) VALUES ('$subject','$notice','$audience',now())";
 
     if ($conn->query($sql) === TRUE) {
         include 'sendmail.php';
@@ -73,7 +74,7 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Placement Portal</title>
+    <title>MyFuse</title>
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -121,16 +122,16 @@ if (isset($_POST['submit'])) {
 
                     </div>
 
-                    <div id="file" class="form-group">
+                    <!-- <div id="file" class="form-group">
                         <style>
                             #file {
                                 margin-left: 40px;
                                 margin-top: 20px;
                             }
                         </style>
-                        <!-- <label style="color: red;">Attachment</label> -->
+                         <label style="color: red;">Attachment</label>
                         <input type="file" name="resume" class="btn btn-flat btn-primary">
-                    </div>
+                    </div> -->
 
                     <br>
                     <div class="form-group mt-3">
@@ -142,7 +143,7 @@ if (isset($_POST['submit'])) {
                         <select class="form-control select2 select2-hidden-accessible" style="width: 100%" tabindex="-1" aria-hidden="true" class="input" name="audience">
 
                             <option class="option" value="All Students">All Students</option>
-                            <option class="option" value="Co-ordinators">Co-ordinators</option>
+                            <option class="option" value="Companies">Companies</option>
 
 
                         </select>
@@ -181,7 +182,6 @@ if (isset($_POST['submit'])) {
 
                                 <th>Audience</th>
 
-                                <th>File</th>
 
                                 <th>Date and Time</th>
                                 <th>Delete</th>
@@ -207,11 +207,11 @@ if (isset($_POST['submit'])) {
                                     <td><?php echo $row['subject']; ?></td>
                                     <td><?php echo $row['notice']; ?></td>
                                     <td><?php echo $row['audience']; ?></td>
-                                    <?php if ($row['resume'] != '') { ?>
+                                    <!-- <?php //if ($row['resume'] != '') { ?>
                                         <td><a href="../uploads/resume/<?php echo $row['resume']; ?>" download="<?php echo 'Notice'; ?>"><i class="fa fa-file"></i></a></td>
-                                    <?php } else { ?>
+                                    <?php //}// else { ?>
                                         <td>No Resume Uploaded</td>
-                                    <?php } ?>
+                                    <?php //} ?> -->
                                     <td><?php echo $row['date']; ?></td>
 
                                     <td><a id="delete" href="deletenotice.php?id=<?php echo $row['id']; ?>"><i class="fa fa-trash"></i></a></td>
@@ -241,8 +241,7 @@ if (isset($_POST['submit'])) {
   width: 100%;
   height: 50px; position:absolute; background-color:#1f0a0a; color:white">
         <div class="text-center">
-            <strong>Copyright &copy; 2022 Placement Portal</strong> All rights
-            reserved.
+            <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
         </div>
     </footer>
 

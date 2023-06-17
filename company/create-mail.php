@@ -17,7 +17,7 @@ require_once("../db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Placement Portal</title>
+  <title>MyFuse</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -55,26 +55,9 @@ require_once("../db.php");
 <body class="hold-transition skin-green sidebar-mini">
   <div class="wrapper">
 
-    <header class="main-header">
-
-      <!-- Logo -->
-      <a href="index.php" class="logo logo-bg">
-        <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>J</b>P</span>
-        <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Placement</b> Portal</span>
-      </a>
-
-      <!-- Header Navbar: style can be found in header.less -->
-      <nav class="navbar navbar-static-top">
-        <!-- Navbar Right Menu -->
-        <div class="navbar-custom-menu">
-          <ul class="nav navbar-nav">
-
-          </ul>
-        </div>
-      </nav>
-    </header>
+  <?php
+    include 'header.php'
+    ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper" style="margin-left: 0px;">
@@ -96,7 +79,7 @@ require_once("../db.php");
                     <li><a href="job-applications.php"><i class="fa fa-file-o"></i> Job Application</a></li>
                     <li class="active"><a href="mailbox.php"><i class="fa fa-envelope"></i> Mailbox</a></li>
                     <li><a href="settings.php"><i class="fa fa-gear"></i> Settings</a></li>
-                    <li><a href="resume-database.php"><i class="fa fa-user"></i> Resume Database</a></li>
+                    <li><a href="resume-database.php"><i class="fa fa-user"></i> Scout Talents</a></li>
                     <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
                   </ul>
                 </div>
@@ -117,7 +100,7 @@ require_once("../db.php");
                         $result = $conn->query($sql);
                         if ($result->num_rows > 0) {
                           while ($row = $result->fetch_assoc()) {
-                            echo '<option value="' . $row['id_user'] . '">' . $row['firstname'] . ' ' . $row['lastname'] . '</option>';
+                            echo '<option value="' . $row['id_user'] . '">' . $row['email'] . ' - ' . $row['firstname'] . '</option>';
                           }
                         }
                         ?>
@@ -152,8 +135,7 @@ require_once("../db.php");
 
     <footer class="main-footer" style="margin-left: 0px;">
       <div class="text-center">
-        <strong>Copyright &copy; 2022 <a href="scsit@Davv">Placement Portal</a>.</strong> All rights
-        reserved.
+      <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
       </div>
     </footer>
 

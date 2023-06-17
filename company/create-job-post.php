@@ -17,7 +17,7 @@ require_once("../db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Placement Portal</title>
+  <title>MyFuse</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -31,6 +31,13 @@ require_once("../db.php");
   <link rel="stylesheet" href="../css/_all-skins.min.css">
   <!-- Custom -->
   <link rel="stylesheet" href="../css/custom.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
 
   <script src="../js/tinymce/tinymce.min.js"></script>
 
@@ -81,7 +88,7 @@ require_once("../db.php");
                     <li><a href="job-applications.php"><i class="fa fa-file-o"></i> Drive Applications</a></li>
                     <li><a href="mailbox.php"><i class="fa fa-envelope"></i> Mailbox</a></li>
                     <li><a href="settings.php"><i class="fa fa-gear"></i> Settings</a></li>
-                    <li><a href="resume-database.php"><i class="fa fa-user"></i> Resume Database</a></li>
+                    <li><a href="resume-database.php"><i class="fa fa-user"></i> Scout Talents</a></li>
                     <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
                   </ul>
                   </ul>
@@ -103,13 +110,58 @@ require_once("../db.php");
                       <input type="number" class="form-control  input-lg" id="minimumsalary" autocomplete="off" name="minimumsalary" placeholder="CTC" required="">
                     </div>
                     <div class="form-group">
-                      <input type="number" class="form-control  input-lg" id="maximumsalary" name="maximumsalary" placeholder="Eligibility Criteria" required="">
+                      <input type="number" class="form-control  input-lg" id="maximumsalary" name="maximumsalary" placeholder="Minimum CGPA" required="">
                     </div>
                     <div class="form-group">
                       <input class="form-control  input-lg" id="experience" autocomplete="off" name="experience" placeholder="Role" required="">
                     </div>
                     <div class="form-group">
-                      <input type="text" class="form-control  input-lg" id="qualification" name="qualification" placeholder="Qualification Required" required="">
+                      <!-- <input type="text" class="form-control  input-lg" id="qualification" name="qualification" placeholder="Qualification Required" required=""> -->
+                      <input name="current_select_qualification_values" type="hidden" value="" id="current_select_qualification_values">
+                      <select multiple='multiple' class="form-control input-lg" type="text" id="current_select_qualification" name="qualification[]">
+                                    <!-- <option value='' selected="selected">Choose Highest Qualification</option> -->
+                                      <?php
+                                        $qualificationoptions = array("B.E",
+                                        "B.Tech",
+                                        "B.Arch",
+                                        "B.Sc",
+                                        "B.S.E",
+                                        "B.Eng",
+                                        "B.Eng",
+                                        "B.Sc",
+                                        "M.E",
+                                        "M.TECH",
+                                        "MCA",
+                                        "Matriculation - X", "Intermediate - XII");
+                                        
+                                        foreach($qualificationoptions as $value){
+                                          //echo "<option value='strtolower($row['college'])'>$row['college']</option>";
+                                        echo "<option value=".$value.">".$value."</option>";
+                                      } ?> 
+                                     </select> 
+                        
+                    </div>
+                    <div class="form-group">
+                      <!-- <input type="text" class="form-control  input-lg" id="qualification" name="qualification" placeholder="Qualification Required" required=""> -->
+                      <input name="current_select_stream_values" type="hidden" value="" id="current_select_stream_values">
+                      <select multiple='multiple' class="form-control input-lg" type="text" id="current_select_stream" name="stream[]">
+                                    <!-- <option value='' selected="selected">Choose Highest Qualification</option> -->
+                                      <?php
+                                        $qualificationoptions = array("CSE",
+                                        "ISE",
+                                        "ECE",
+                                        "ME",
+                                        "EEE",
+                                        "CIVIL",
+                                        "BioTe Technology"
+                                        );
+                                        
+                                        foreach($qualificationoptions as $value){
+                                          //echo "<option value='strtolower($row['college'])'>$row['college']</option>";
+                                        echo "<option value=".$value.">".$value."</option>";
+                                      } ?> 
+                                     </select> 
+                        
                     </div>
 
 
@@ -136,8 +188,7 @@ require_once("../db.php");
     <!-- /.content-wrapper -->
     <footer class="main-footer" style="margin-left: 0px;">
       <div class="text-center">
-        <strong>Copyright &copy; 2022 <a href="scsit@Davv">Placement Portal</a>.</strong> All rights
-        reserved.
+      <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
       </div>
     </footer>
 
@@ -152,9 +203,67 @@ require_once("../db.php");
   <!-- jQuery 3 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- Bootstrap 3.3.7 -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>                                    
   <!-- AdminLTE App -->
   <script src="../js/adminlte.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
+  <script>
+//   $(document).ready(function() {       
+// 	$('#qualification').multiselect({		
+// 		nonSelectedText: 'Select Minimum Qualification'				
+// 	});
+// });
+$(document).ready(function() {       
+	$('#current_select_qualification').multiselect({		
+		nonSelectedText: 'Select Minimum Qualification'				
+	});
+});
+
+$(function () {
+
+ 
+ $('#current_select_qualification').multiselect({ 
+ buttonText: function(options, select) {
+ var labels = [];
+ console.log(options);
+ options.each(function() {
+ labels.push($(this).val());
+ });
+ $("#current_select_qualification_values").val(labels.join(',') + '');
+ return labels.join(', ') + '';
+ //}
+ }
+ 
+ });
+});
+
+$(document).ready(function() {       
+	$('#current_select_stream').multiselect({		
+		nonSelectedText: 'Select Elligible Streams'				
+	});
+});
+
+$(function () {
+
+ 
+ $('#current_select_stream').multiselect({ 
+ buttonText: function(options, select) {
+ var labels = [];
+ console.log(options);
+ options.each(function() {
+ labels.push($(this).val());
+ });
+ $("#current_select_stream_values").val(labels.join(',') + '');
+ return labels.join(', ') + '';
+ //}
+ }
+ 
+ });
+});
+  </script>
 </body>
+
 
 </html>

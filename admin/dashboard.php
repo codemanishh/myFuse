@@ -15,7 +15,7 @@ require_once("../db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Placement Portal</title>
+  <title>MyFuse</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -66,7 +66,7 @@ require_once("../db.php");
                     <li><a href="active-jobs.php"><i class="fa fa-briefcase"></i> Active Drives</a></li>
                     <li><a href="applications.php"><i class="fa fa-address-card-o"></i> Students Profile</a></li>
                     <!-- <li><a href="companies.php"><i class="fa fa-building"></i> Companies</a></li> -->
-                    <li><a href="companies.php"><i class="fa fa-arrow-circle-o-right"></i> Co - Ordinators</a></li>
+                    <li><a href="companies.php"><i class="fa fa-arrow-circle-o-right"></i> Companies </a></li>
                     <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
                   </ul>
                 </div>
@@ -74,13 +74,13 @@ require_once("../db.php");
             </div>
             <div class="col-md-9 bg-white padding-2">
 
-              <h3>Placement Cell Statistics</h3>
+              <h3>Company Statistics</h3>
               <div class="row">
                 <div class="col-md-6">
                   <div class="info-box bg-c-yellow">
                     <span class="info-box-icon bg-red"><i class="ion ion-briefcase"></i></span>
                     <div class="info-box-content">
-                      <span class="info-box-text">Co-Ordinators</span>
+                      <span class="info-box-text">Companies</span>
                       <?php
                       $sql = "SELECT * FROM company WHERE active='1'";
                       $result = $conn->query($sql);
@@ -199,8 +199,7 @@ require_once("../db.php");
 
     <footer class="main-footer" style="margin-left: 0px;">
       <div class="text-center">
-        <strong>Copyright &copy; 2022 <a href="learningfromscratch.online">Placement Portal</a>.</strong> All rights
-        reserved.
+        <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
       </div>
     </footer>
 

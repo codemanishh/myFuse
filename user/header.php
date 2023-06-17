@@ -1,7 +1,9 @@
+
 <!-- Main header -->
-<header class="header">
+
+<header class="header" style="background-color:#D3FB52">
     <nav class="navbar">
-        <a href="#" class="nav-logo">Placement Portal</a>
+                        <a href="#" class="nav-logo"><img src="../assets/img/MyFuse.png" height="40px" style="height:40px;"  /></a>
         <ul class="nav-menu">
             <li class="nav-item">
                 <a href="index.php" class="nav-link">Dashboard</a>
@@ -91,7 +93,7 @@
     .nav-link {
         font-size: 1.6rem;
         font-weight: 400;
-        color: #b3c6e0;
+        color: black;
     }
 
     .nav-link:hover {

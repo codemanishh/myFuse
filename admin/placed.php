@@ -15,7 +15,7 @@ require_once("../db.php");
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Placement Portal</title>
+    <title>MyFuse</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -104,7 +104,7 @@ require_once("../db.php");
                                         // selecting student record via option 
                                         // fetching placed students from placed table &user table
 
-                                        $sql = "select * from users inner join apply_job_post INNER JOIN job_post where users.id_user = apply_job_post.id_user AND apply_job_post.id_jobpost = job_post.id_jobpost;;";
+                                        $sql = "select * from users inner join apply_job_post INNER JOIN job_post where users.id_user = apply_job_post.id_user AND apply_job_post.id_jobpost = job_post.id_jobpost AND status=0;";
                                         $_SESSION['QUERY'] = $sql;
                                         $result = $conn->query($sql);
 
@@ -160,8 +160,7 @@ require_once("../db.php");
   width: 100%;
   height: 50px; position:absolute; background-color:#1f0a0a; color:white">
         <div class="text-center">
-            <strong>Copyright &copy; 2022 Placement Portal</strong> All rights
-            reserved.
+            <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
         </div>
     </footer>
 
