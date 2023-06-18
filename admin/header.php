@@ -1,5 +1,5 @@
 <!-- Main header -->
-<header class="header" style="background-color: #D3FB52;">
+<header class="header" style="background-color: #0C134F;">
     <nav class="navbar">
     <!-- <img src="../assets/img/MyFuse2.png" height="70px" style="height:70px" /> -->
         <a href="#" class="nav-logo"><img src="../assets/img/MyFuse.png" height="40px" style="height:40px" /></a>
@@ -63,7 +63,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 1rem 1.5rem;
-        background-color: #2d2a2e;
+        background-color: #0C134F;
     }
 
     .hamburger {
@@ -77,7 +77,7 @@
         margin: 5px auto;
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
-        background-color: #101010;
+        background-color: #af00ff;
 
     }
 
@@ -94,7 +94,7 @@
     .nav-link {
         font-size: 1.6rem;
         font-weight: 400;
-        color: #b3c6e0;
+        color: #ffffff;
     }
 
     .nav-link:hover {
@@ -113,7 +113,7 @@
             left: -100%;
             top: 5rem;
             flex-direction: column;
-            background-color: #0b0606;
+            background-color: #D4ADFC;
             /* background-color: #482ff7; */
             width: 100%;
             border-radius: 10px;

@@ -52,7 +52,11 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
 
   ?>
 
-
+color: var(--color-white);
+  font-size: 14px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
 
   <!-- </header> -->
   <div class="login-box hello">
@@ -61,8 +65,8 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
       <a href="index.php" style="color:black"><b>Placement Portal</b></a>
     </div>
     <!-- /.login-logo -->
-    <div class="login-box-body bg-blue-200 text-black ">
-      <p class="login-box-msg text-2xl text-black">Student Login</p>
+    <div class="login-box-body bg-blue-200 text-white" style="background: #0C134F;">
+      <p class="login-box-msg text-2xl text-white">Student Login</p>
 
       <form method="post" action="checklogin.php " class="text-xl">
         <div class="form-group has-feedback">

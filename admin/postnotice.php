@@ -237,18 +237,67 @@ if (isset($_POST['submit'])) {
     </div>
 
 
-    <footer class="main-footer" style="margin:auto;margin-bottom: 0px; padding:15px;
-  width: 100%;
-  height: 50px; position:absolute; background-color:#1f0a0a; color:white">
-        <div class="text-center">
-            <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
-        </div>
+    <footer class="main-footer" style="
+        margin-left: 0px;
+    background: #5C469C;
+    padding: 29px;
+    color: #fff;
+    border-top: 1px solid #d2d6de;">
+      <div class="text-center">
+        <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
+      </div>
     </footer>
 
 </body>
 
 </html>
+<style>
+    .box-body {
+        box-shadow: 0 0 10px #;
+    background-color: #;
+    color: #0C134F;
+    padding: 10px;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    border-radius: 10px;
+    }
 
+    .table {
+        box-shadow: 0 0 5px #0C134F;
+        background-color: #5C469C;
+        color: #FFFFFF;
+        margin-top: 10px;
+        width: 100%;
+    }
+    .table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #D4ADFC;
+    color: #0C134F;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #0C134F;
+    border-color: #2e6da4;
+    padding: 7px;
+    width: 15vh;
+    border-radius: 11px;
+    margin-top: 8px;
+}
+    th, td {
+        padding: 10px;
+        border: 1px solid #;
+    }
+
+    th {
+        background-color: #;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #;
+    }
+
+    #delete {
+        color: #;
+    }
+</style>
 
 <style>
     body {
@@ -260,20 +309,29 @@ if (isset($_POST['submit'])) {
 
     .centre {
         margin: 20px 30px 100px 20px;
-        text-align: center;
-        height: 450px;
-        width: 700px;
-        border: 2px solid black;
-        border-radius: 10px;
-        /* display: inline-grid; */
-        display: inline-block;
-
+    text-align: center;
+    height: 450px;
+    width: 700px;
+    border: 10px solid white;
+    border-radius: 10px;
+    /* display: inline-grid; */
+    display: inline-block;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
 
     }
 
     #subject {
 
         width: 86%;
+          width: 100%;
+        padding: 10px;
+        margin: 10px auto;
+        display: block;
+        border: none;
+        border-radius: 7px;
+        background-color: #D4ADFC;
+        color: #0C134F;
+        font-size: 16px;
 
 
     }
@@ -290,6 +348,18 @@ if (isset($_POST['submit'])) {
         border-radius: 5px;
         background-color: white;
         text-align: center;
+        
+        width: 86%;
+          width: 100%;
+        padding: 10px;
+        margin: 10px auto;
+        display: block;
+        border: none;
+        border-radius: 7px;
+        background-color: #D4ADFC;
+        color: #0C134F;
+        font-size: 16px;
+
 
 
     }
@@ -331,6 +401,7 @@ if (isset($_POST['submit'])) {
             height: 80%;
             width: 80%;
             margin: auto;
+            margin-left: 115px;
         }
 
         #subject {

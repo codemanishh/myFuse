@@ -1,4 +1,9 @@
-<footer id="footer" class="footer">
+<footer id="footer" class="footer" style="  color: var(--color-white);
+      color: var(--color-white);
+    font-size: 14px;
+    /* position: absolute; */
+    bottom: 0px;
+    width: 100%;">
 
 
 

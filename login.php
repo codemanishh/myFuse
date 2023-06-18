@@ -54,10 +54,10 @@
                 <div class="p-4 md:w-1/3">
                     <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                         <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="assets/img/login/login-2.jpg" alt="blog">
-                        <div class="p-6">
-                            <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">Are you a </h2>
+                        <div class="p-6" style="background: #D4ADFC;">
+                            <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1" style="color: var(--bs-blue);">Are you a </h2>
                             <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Student?</h1>
-                            <p class="leading-relaxed mb-3">Students can login using their credentials. New students can register.</p>
+                            <p class="leading-relaxed mb-3" style="color: var(--color-default);">Students can login using their credentials. New students can register.</p>
                             <div class="flex items-center flex-wrap ">
                                 <a href="login-candidates.php" class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Login/Register
                                     <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -73,10 +73,10 @@
                 <div class="p-4 md:w-1/3 ">
                     <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                         <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="assets/img/login/login-1.jpg" alt="blog">
-                        <div class="p-6">
-                            <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">Are you from the</h2>
+                        <div class="p-6" style="background: #D4ADFC;">
+                            <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1" style="color: var(--bs-blue);">Are you from the</h2>
                             <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Company ?</h1>
-                            <p class="leading-relaxed mb-3">The placement coordinators can log into their account from here.</p>
+                            <p class="leading-relaxed mb-3" style="color: var(--color-default);">The placement coordinators can log into their account from here.</p>
                             <div class="flex items-center flex-wrap">
                                 <a href="login-company.php" class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Login/Register
                                     <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">

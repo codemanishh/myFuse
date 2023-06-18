@@ -223,12 +223,18 @@ require_once("../db.php");
     </div>
     <!-- /.content-wrapper -->
 
-    <footer class="main-footer" style="margin:auto;bottom: 0;
+    <footer class="main-footer" style="
+        margin-left: 0px;
+    background: #5C469C;
+    padding: 29px;
+    color: #fff;
+    border-top: 1px solid #d2d6de;
+    margin:auto;bottom: 0;
   width: 100%;
-  height: 50px; position:absolute; background-color:#1f0a0a; color:white">
-        <div class="text-center">
-            <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
-        </div>
+  height: 50px; position:absolute;">
+      <div class="text-center">
+        <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
+      </div>
     </footer>
 
     <!-- /.control-sidebar -->

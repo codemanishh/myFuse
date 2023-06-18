@@ -1,6 +1,6 @@
 
 
- <header id=" header" class="header fixed-top" data-scrollto-offset="0" style="background-color: #0C134F; color:#D4ADFC; height:80px;"> 
+ <header id=" header" class="header fixed-top" data-scrollto-offset="0" style="background-color: #0C134F; color:D4ADFC; height:80px;"> 
  
      <div class="container-fluid d-flex align-items-center justify-content-between">
      <img src="assets/img/MyFuse.png" height="60px" style="height:40px" />
