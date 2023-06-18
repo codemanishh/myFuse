@@ -80,8 +80,6 @@ color: var(--color-white);
         <style>
           #large {
             font-size: medium;
-
-
           }
         </style>
         <div class="row ">
@@ -115,7 +113,7 @@ color: var(--color-white);
       if (isset($_SESSION['loginError'])) {
       ?>
         <div>
-          <p class="text-center">Invalid Email/Password! Try Again!</p>
+          <p class="text-center text-red fs-5">Invalid Email/Password! Try Again!</p>
         </div>
       <?php
         unset($_SESSION['loginError']);
@@ -139,16 +137,18 @@ color: var(--color-white);
       if (isset($_SESSION['loginActiveError'])) {
       ?>
         <div>
-          <p class="text-center"><?php echo $_SESSION['loginActiveError']; ?></p>
+          <p class="text-center text-red"><?php echo $_SESSION['loginActiveError']; ?></p>
         </div>
       <?php
         unset($_SESSION['loginActiveError']);
       }
       ?>
-
+      <div>
+       <p class="text-center"><a class="fs-4" href="register-candidates.php">Create new account</a></p>
+      </div>
     </div>
 
-    <a class="text-xl text-black" href="register-candidates.php">Create new account</a>
+   
     <!-- /.login-box-body -->
   </div>
   <!-- /.login-box -->

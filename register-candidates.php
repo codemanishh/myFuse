@@ -71,7 +71,7 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
                 </div>
                 <div class="form-group">
                   <label>Date Of Birth</label>
-                  <input class="form-control input-lg" type="date" id="dob" min="1960-01-01" max="1999-01-31" name="dob" placeholder="Date Of Birth">
+                  <input class="form-control input-lg" type="date" id="dob" min="1960-01-01" max="2005-01-31" name="dob" placeholder="Date Of Birth" required>
                 </div>
                 <div class="form-group">
                   <input class="form-control input-lg" type="text" id="age" name="age" placeholder="Age" readonly>
@@ -83,7 +83,7 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
                 <div class="form-group">
                   <!-- <input class="form-control input-lg" type="text" id="qualification" name="qualification" placeholder="Highest Qualification"> -->
                   <select class="form-control input-lg" type="text" id="qualification" name="qualification" placeholder="Highest Qualification">
-                                    <option value='' selected="selected">Choose Highest Qualification</option>
+                                    <option value='' selected="selected">Choose Highest Qualification *</option>
                                       <?php
                                         $qualificationoptions = array("B.E",
                                         "B.Tech",
@@ -107,7 +107,7 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
                 <div class="form-group">
                 
                                   <select class="form-control input-lg" type="text" id="stream" name="stream" placeholder="Stream">
-                                    <option value='' selected="selected">Choose Stream</option>
+                                    <option value='' selected="selected">Choose Stream *</option>
                                       <?php
                                         $qualificationoptions = array("CSE",
                                         "ISE",
@@ -126,7 +126,7 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
                   <!-- <input class="form-control input-lg" type="text" id="stream" name="stream" placeholder="Stream"> -->
                 </div>
                 <div class="form-group checkbox">
-                  <label><input type="checkbox"> I accept terms & conditions</label>
+                  <label><input type="checkbox" required> I accept terms & conditions *</label>
                 </div>
                 <div class="form-group">
                   <button class="btn btn-flat btn-success">Register</button>
@@ -165,7 +165,10 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
                   <input class="form-control input-lg" type="text" id="collegename" name="collegename" placeholder="College Name *" required>
                 </div>
                 <div class="form-group">
-                  <input class="form-control input-lg" type="text" id="contactno" name="contactno" minlength="10" maxlength="10" onkeypress="return validatePhone(event);" placeholder="Phone Number">
+                  <input class="form-control input-lg" type="text" id="cgpa" name="cgpa" placeholder="CGPA out of 10 *">
+                </div>
+                <div class="form-group">
+                  <input class="form-control input-lg" type="text" id="contactno" name="contactno" minlength="10" maxlength="10" onkeypress="return validatePhone(event);" placeholder="Phone Number *" required>
                 </div>
                 <div class="form-group">
                   <textarea class="form-control input-lg" rows="4" id="address" name="address" placeholder="Address"></textarea>
@@ -179,9 +182,7 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
                 <div class="form-group">
                   <textarea class="form-control input-lg" rows="4" id="skills" name="skills" placeholder="Enter Skills"></textarea>
                 </div>
-                <div class="form-group">
-                  <input class="form-control input-lg" type="text" id="designation" name="designation" placeholder="Designation">
-                </div>
+                
 
                 <div class="form-group">
                   <label style="color: red;">File Format PDF Only!</label>

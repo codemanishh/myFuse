@@ -26,7 +26,7 @@ if (isset($_POST)) {
 		while ($row = $result->fetch_assoc()) {
 
 			if ($row['active'] == '2') {
-				$_SESSION['companyLoginError'] = "Your Account Is Still Pending Approval.";
+				$_SESSION['companyLoginError'] = "Waiting for admins approval of the account.";
 				header("Location: login-company.php");
 				exit();
 			} else if ($row['active'] == '0') {

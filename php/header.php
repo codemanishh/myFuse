@@ -1,6 +1,5 @@
 
-
- <header id=" header" class="header fixed-top" data-scrollto-offset="0" style="background-color: #0C134F; color:D4ADFC; height:80px;"> 
+ <header id=" header" class="header fixed-top" data-scrollto-offset="0" style="background-color: #0C134F; color:#D4ADFC; height:80px;">
  
      <div class="container-fluid d-flex align-items-center justify-content-between">
      <img src="assets/img/MyFuse.png" height="60px" style="height:40px" />
@@ -15,6 +14,8 @@
                  <li class="dropdown"><a href="login.php" style="color: #D4ADFC;"><span>Login</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                      <ul>
 
+                         <li><a href="login-candidates.php">Student Login</a></li>
+                         <li><a href="login-company.php">Company</a></li>
                          <li><a href="admin/index.php" style="color: #D4ADFC;">Admin Login</a></li>
                          <li><a href="login-candidates.php" style="color: #D4ADFC;">Student Login</a></li>
                          <li><a href="login-company.php" style="color: #D4ADFC;">Company</a></li>
