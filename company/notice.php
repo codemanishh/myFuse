@@ -55,14 +55,14 @@ require_once("../db.php");
                         <div class="col-md-2">
 
                         </div>
-                        <div class="col-md-8 bg-white padding-2">
+                        <div class="col-md-8 bg-white padding-2" style="    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;">
                             <div class="box box-primary">
-                                <div class="box-header with-border">
+                                <div class="box-header with-border" style="background: #D4ADFC;">
                                     <h3 id="heading" class="box-title">Posted Notice</h3>
                                 </div>
 
                                 <!-- /.box-header -->
-                                <div class="box-body">
+                                <div class="box-body" style="background: #D4ADFC;">
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead class="table">
                                             <tr>
@@ -126,7 +126,8 @@ require_once("../db.php");
     </div>
     <!-- /.content-wrapper -->
 
-    <footer class="main-footer" style="margin-left: 0px;">
+    <footer class="main-footer" style="margin-left: 0px;     background: #5C469C;
+    color: #fff;">
         <div class="text-center">
         <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
         </div>

@@ -1,6 +1,6 @@
 <!-- Main header -->
-<header class="header" style="background-color:#D3FB52">
-    <nav class="navbar">
+<header class="header" style="background-color:#0C134F; color:#D4ADFC;">
+    <nav class="navbar" style="color:#D4ADFC;">
             <a href="#" class="nav-logo"><img src="../assets/img/MyFuse.png" height="40px" style="height:40px" />
 
         <ul class="nav-menu">
@@ -91,7 +91,7 @@
     .nav-link {
         font-size: 1.6rem;
         font-weight: 400;
-        color: black;
+        color: #D4ADFC;
     }
 
     .nav-link:hover {

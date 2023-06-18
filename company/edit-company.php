@@ -55,7 +55,7 @@ require_once("../db.php");
       <section id="candidates" class="content-header">
         <div class="container">
           <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3" style="    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;">
               <div class="box box-solid">
                 <div class="box-header with-border">
                   <h3 class="box-title">Welcome <b><?php echo $_SESSION['name']; ?></b></h3>
@@ -76,7 +76,7 @@ require_once("../db.php");
                 </div>
               </div>
             </div>
-            <div class="col-md-9 bg-white padding-2">
+            <div class="col-md-9 bg-white padding-2" style="    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;">
               <h2><i>Co-Ordinator Profile</i></h2>
               <p>In this section you can change your details</p>
               <div class="row">
@@ -106,7 +106,7 @@ require_once("../db.php");
                           <textarea class="form-control input-lg" rows="4" name="aboutme"><?php echo $row['aboutme']; ?></textarea>
                         </div>
                         <div class="form-group">
-                          <button type="submit" class="btn btn-flat btn-success">Update Profile</button>
+                          <button type="submit" class="btn btn-flat" style="background:#0C134F; color:#D4ADFC;">Update Profile</button>
                         </div>
                       </div>
                       <div class="col-md-6 latest-job ">

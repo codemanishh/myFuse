@@ -58,7 +58,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 1rem 1.5rem;
-        background-color: #114f5e;
+        background-color: #0C134F;
     }
 
     .hamburger {

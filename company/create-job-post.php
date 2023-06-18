@@ -74,7 +74,7 @@ require_once("../db.php");
       <section id="candidates" class="content-header">
         <div class="container">
           <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3" style="    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;">
               <div class="box box-solid">
                 <div class="box-header with-border">
                   <h3 class="box-title">Welcome <b><?php echo $_SESSION['name']; ?></b></h3>
@@ -95,7 +95,7 @@ require_once("../db.php");
                 </div>
               </div>
             </div>
-            <div class="col-md-9 bg-white padding-2">
+            <div class="col-md-9 bg-white padding-2" style="    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;">
               <h2>Post a new Drive</h2>
               <div class="row">
                 <form method="post" action="addpost.php">
@@ -171,7 +171,7 @@ require_once("../db.php");
 
 
                     <div class="form-group">
-                      <button type="submit" class="btn btn-flat btn-success">Create</button>
+                      <button type="submit" class="btn btn-flat"  style="background:#0C134F; color:#D4ADFC;">Create</button>
                     </div>
                   </div>
                 </form>

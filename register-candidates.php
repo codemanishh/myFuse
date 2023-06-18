@@ -129,7 +129,9 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
                   <label><input type="checkbox" required> I accept terms & conditions *</label>
                 </div>
                 <div class="form-group">
-                  <button class="btn btn-flat btn-success">Register</button>
+                  <button class="btn btn-flat" style="background: #0C134F;
+    color: #fff;
+    ">Register</button>
                 </div>
                 <?php
                 //If User already registered with this email then show error message.
@@ -200,7 +202,11 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
     </div>
     <!-- /.content-wrapper -->
 
-    <footer class="main-footer" style="margin-left: 0px;">
+    <footer class="main-footer" style="margin-left: 0px;
+        background: #5C469C;
+    padding: 15px;
+    color: #fff;
+    border-top: 1px solid #d2d6de;">
       <div class="text-center">
       <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
       </div>

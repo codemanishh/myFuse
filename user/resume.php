@@ -42,7 +42,8 @@ require_once("../db.php");
             <br>
 
 
-            <div class="row">
+            <div class="row" style="box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    padding: 21px;     font-size: 15px;    gap: 73px;">
 
 
                 <div class="col md-6">
@@ -243,7 +244,27 @@ require_once("../db.php");
         </div>
 
     </div>
-
+ <style>
+    .form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    border-radius: 13px;
+    padding: 10px;
+}
+ </style>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 

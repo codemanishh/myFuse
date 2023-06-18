@@ -57,7 +57,10 @@ require_once("../db.php");
       <section id="candidates" class="content-header">
         <div class="container">
           <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3" style="
+                  border-top: 0;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
               <div class="box box-solid">
                 <div class="box-header with-border">
                   <h3 class="box-title">Welcome <b><?php echo $_SESSION['name']; ?></b></h3>
@@ -88,7 +91,7 @@ require_once("../db.php");
                       <input id="cpassword" class="form-control input-lg" type="password" autocomplete="off" placeholder="Confirm Password" required>
                     </div>
                     <div class="form-group">
-                      <button type="submit" class="btn btn-flat btn-success">Change Password</button>
+                      <button type="submit" class="btn btn-flat" style="background-color:#0C134F; color:#ffffff;">Change Password</button>
                     </div>
                     <div id="passwordError" class="color-red text-center hide-me">
                       Password Mismatch!!
@@ -113,11 +116,15 @@ require_once("../db.php");
     </div>
     <!-- /.content-wrapper -->
 
-    <footer class="main-footer" style="margin-left: 0px;">
+    <footer class="main-footer" style="margin-left: 0px;    background: #5C469C;
+    padding: 15px;
+    color: #fff;
+    border-top: 1px solid #d2d6de;">
       <div class="text-center">
         <strong>Copyright &copy; 2023 <a href=../assets/privacypolicy.html>MyFuse </a></strong> All rights reserved.
       </div>
     </footer>
+
 
     <!-- /.control-sidebar -->
     <!-- Add the sidebar's background. This div must be placed

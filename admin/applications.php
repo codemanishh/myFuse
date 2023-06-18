@@ -57,7 +57,10 @@ require_once("../db.php");
       <section id="candidates" class="content-header">
         <div class="container">
           <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3" style="
+                  border-top: 0;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
               <div class="box box-solid">
                 <div class="box-header with-border">
                   <h3 class="box-title">Welcome <b>Admin</b></h3>
@@ -74,7 +77,10 @@ require_once("../db.php");
                 </div>
               </div>
             </div>
-            <div class="col-md-9 bg-white padding-2">
+            <div class="col-md-9 bg-white padding-2" style="
+                  border-top: 0;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;" >
 
               <h3>Candidates Database</h3>
               <div class="row margin-top-20">

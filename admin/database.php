@@ -87,7 +87,7 @@ require_once("../db.php");
                                         }
                                         ?>
                                     </select>
-                                    <input name="submit" type="submit" value="Submit">
+                                    <input name="submit" type="submit" value="Submit"style="background: #0C134F; color: #fff; padding: 4px; width: 77px; border-radius: 6px; margin-top: 16px;">
                                     <form method="POST" action=""></form>
 
 
