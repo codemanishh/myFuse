@@ -58,22 +58,22 @@ require_once("db.php");
             <form method="post" id="registerCompanies" action="addcompany.php" enctype="multipart/form-data">
               <div class="col-md-6 latest-job ">
                 <div class="form-group">
-                  <input class="form-control input-lg" type="text" name="name" placeholder="Enter Your Name" required>
+                  <input class="form-control input-lg" type="text" name="name" placeholder="Enter Your Name *" required>
                 </div>
                 <div class="form-group">
-                  <input class="form-control input-lg" type="text" name="companyname" placeholder="Enter Company Name">
+                  <input class="form-control input-lg" type="text" name="companyname" placeholder="Enter Company Name *" required>
                 </div>
                 <div class="form-group">
-                  <input class="form-control input-lg" type="text" name="website" placeholder="Website">
+                  <input class="form-control input-lg" type="text" name="website" placeholder="Website *" required>
                 </div>
                 <div class="form-group">
                   <input class="form-control input-lg" type="email" name="email" placeholder="Email" required>
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control input-lg" rows="4" name="aboutme" placeholder="About the Company"></textarea>
+                  <textarea class="form-control input-lg" rows="4" name="aboutme" placeholder="About the Company">About the Company</textarea>
                 </div>
                 <div class="form-group checkbox">
-                  <label><input type="checkbox" required> I accept terms & conditions</label>
+                  <label><input type="checkbox" required> I accept terms & conditions *</label>
                 </div>
                 <div class="form-group">
                   <button type="submit" class="btn btn-flat btn-success">Register</button>
@@ -102,16 +102,16 @@ require_once("db.php");
               </div>
               <div class="col-md-6 latest-job ">
                 <div class="form-group">
-                  <input class="form-control input-lg" type="password" name="password" placeholder="Password" required>
+                  <input class="form-control input-lg" type="password" name="password" placeholder="Password *" required>
                 </div>
                 <div class="form-group">
-                  <input class="form-control input-lg" type="password" name="cpassword" placeholder="Confirm Password" required>
+                  <input class="form-control input-lg" type="password" name="cpassword" placeholder="Confirm Password *" required>
                 </div>
                 <div id="passwordError" class="btn btn-flat btn-danger hide-me">
                   Password Mismatch!!
                 </div>
                 <div class="form-group">
-                  <input class="form-control input-lg" type="text" name="contactno" placeholder="Phone Number" minlength="10" maxlength="10" autocomplete="off" onkeypress="return validatePhone(event);" required>
+                  <input class="form-control input-lg" type="text" name="contactno" placeholder="Phone Number *" minlength="10" maxlength="10" autocomplete="off" onkeypress="return validatePhone(event);" required>
                 </div>
                 <div class="form-group">
                   <select class="form-control  input-lg" id="country" name="country">

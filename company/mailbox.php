@@ -111,8 +111,8 @@ require_once("../db.php");
                                   $rownum=1;
                                   while ($row = $result->fetch_assoc()) {
                               ?>
-                                  <tr>
                                     <?php
+                                      echo "<tr onclick=\"window.location='read-mail.php?id_mail=".$row['id_mailbox']."'\">";
                                       if($row['fromuser'] == 'user'){
                                         $sql1 = "SELECT * From users WHERE id_user='$row[id_fromuser]'";
                                         $result1 = $conn->query($sql1);
@@ -189,9 +189,9 @@ require_once("../db.php");
                                   // $result1 = $conn->query($sql1);
                                   // while()
                               ?>
-                                  <tr>
-                                   
+                                  
                                     <?php
+                                      echo "<tr onclick=\"window.location='read-mail.php?id_mail=".$row['id_mailbox']."'\">";
                                       if($row['fromuser'] == 'company'){
                                         $sql1 = "SELECT * From users WHERE id_user='$row[id_touser]'";
                                         $result1 = $conn->query($sql1);

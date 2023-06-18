@@ -23,7 +23,7 @@ if (isset($_POST)) {
 	$passingyear = mysqli_real_escape_string($conn, $_POST['passingyear']);
 	$dob = mysqli_real_escape_string($conn, $_POST['dob']);
 	$age = mysqli_real_escape_string($conn, $_POST['age']);
-	$designation = mysqli_real_escape_string($conn, $_POST['designation']);
+	$cgpa = mysqli_real_escape_string($conn, $_POST['cgpa']);
 	$aboutme = mysqli_real_escape_string($conn, $_POST['aboutme']);
 	$skills = mysqli_real_escape_string($conn, $_POST['skills']);
 	$email = mysqli_real_escape_string($conn, $_POST['email']);
@@ -93,7 +93,7 @@ if (isset($_POST)) {
 
 
 		//sql new registration insert query
-		$sql = "INSERT INTO users(firstname, lastname, gender, college, email, password, address, city, state, contactno, qualification, stream, passingyear, dob, age, designation, resume, hash, aboutme, skills) VALUES ('$firstname', '$lastname', '$gender', '$collegename', '$email', '$password', '$address', '$city', '$state', '$contactno', '$qualification', '$stream', '$passingyear', '$dob', '$age', '$designation', '$file', '$hash', '$aboutme', '$skills')";
+		$sql = "INSERT INTO users(firstname, lastname, gender, college, email, password, address, city, state, contactno, qualification, stream, passingyear, dob, age, ug, resume, hash, aboutme, skills) VALUES ('$firstname', '$lastname', '$gender', '$collegename', '$email', '$password', '$address', '$city', '$state', '$contactno', '$qualification', '$stream', '$passingyear', '$dob', '$age', '$cgpa', '$file', '$hash', '$aboutme', '$skills')";
 
 		if ($conn->query($sql) === TRUE) {
 			// Send Email

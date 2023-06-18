@@ -47,7 +47,7 @@ if(isset($_POST)) {
 				}
 			} else if($row['active'] == '2') { 
 
-				$_SESSION['loginActiveError'] = "Your Account Is Deactivated. Contact Admin To Reactivate.";
+				$_SESSION['loginActiveError'] = "Waiting for admins approval of the account";
 		 		header("Location: login-candidates.php");
 				exit();
 			}

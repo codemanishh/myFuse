@@ -101,19 +101,19 @@ require_once("../db.php");
                 <form method="post" action="addpost.php">
                   <div class="col-md-12 latest-job ">
                     <div class="form-group">
-                      <input class="form-control input-lg" type="text" id="jobtitle" name="jobtitle" placeholder="Company Name">
+                      <input class="form-control input-lg hidden" type="text" id="jobtitle" name="jobtitle" placeholder="Company Name" value=<?php echo $_SESSION['name'];?>>
                     </div>
                     <div class="form-group">
-                      <textarea class="form-control input-lg" id="description" name="description" placeholder="Job Description"></textarea>
+                      <textarea class="form-control input-lg" id="description" name="description" placeholder="Job Description">About the Company</textarea>
                     </div>
                     <div class="form-group">
-                      <input type="number" class="form-control  input-lg" id="minimumsalary" autocomplete="off" name="minimumsalary" placeholder="CTC" required="">
+                      <input type="number" class="form-control  input-lg" id="minimumsalary" autocomplete="off" name="minimumsalary" placeholder="CTC *" required="">
                     </div>
                     <div class="form-group">
-                      <input type="number" class="form-control  input-lg" id="maximumsalary" name="maximumsalary" placeholder="Minimum CGPA" required="">
+                      <input type="number" class="form-control  input-lg" id="maximumsalary" name="maximumsalary" placeholder="Minimum CGPA out of 10*" required="">
                     </div>
                     <div class="form-group">
-                      <input class="form-control  input-lg" id="experience" autocomplete="off" name="experience" placeholder="Role" required="">
+                      <input class="form-control  input-lg" id="experience" autocomplete="off" name="experience" placeholder="Role *" required="">
                     </div>
                     <div class="form-group">
                       <!-- <input type="text" class="form-control  input-lg" id="qualification" name="qualification" placeholder="Qualification Required" required=""> -->
@@ -217,7 +217,7 @@ require_once("../db.php");
 // });
 $(document).ready(function() {       
 	$('#current_select_qualification').multiselect({		
-		nonSelectedText: 'Select Minimum Qualification'				
+		nonSelectedText: 'Select Minimum Qualification *'				
 	});
 });
 
@@ -241,7 +241,7 @@ $(function () {
 
 $(document).ready(function() {       
 	$('#current_select_stream').multiselect({		
-		nonSelectedText: 'Select Elligible Streams'				
+		nonSelectedText: 'Select Elligible Streams *'				
 	});
 });
 

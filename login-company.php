@@ -53,7 +53,7 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
 
   <div class="login-box content:centre">
     <div class="login-logo">
-      <a href="index.php" style="color:black"><b>Placement Portal</b></a>
+      <a href="index.php" style="color:black"><b>Company Login</b></a>
     </div>
     <!-- /.login-logo -->
     <div class=" login-box-body bg-blue-200 text-black text-xl">
@@ -75,7 +75,7 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
         </style>
         <div class="row">
           <div class="col-xs-8">
-            <a href="#">Forgot password</a><br>
+            <a href="#">Forgot password ?</a><br>
 
           </div>
           <!-- /.col -->
@@ -102,7 +102,7 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
               if (isset($_SESSION['loginError'])) {
               ?>
                 <div>
-                  <p class="text-center">Invalid Email/Password! Try Again!</p>
+                  <p class="text-center text-red fs-5">Invalid Email/Password! Try Again!</p>
                 </div>
               <?php
                 unset($_SESSION['loginError']);
@@ -112,7 +112,7 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
               if (isset($_SESSION['companyLoginError'])) {
               ?>
                 <div>
-                  <p class="text-center"><?php echo $_SESSION['companyLoginError'] ?></p>
+                  <p class="text-center text-red fs-5"><?php echo $_SESSION['companyLoginError'] ?></p>
                 </div>
               <?php
                 unset($_SESSION['companyLoginError']);
@@ -124,9 +124,11 @@ if (isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
 
 
       <br>
-
+      <div>
+       <p class="text-center"><a class="fs-4" href=" register-company.php">Create new account</a></p>
+      </div>
     </div>
-    <a class="text-xl text-black" href=" register-company.php">Create new account</a>
+ 
     <!-- /.login-box-body -->
   </div>
   <!-- /.login-box -->

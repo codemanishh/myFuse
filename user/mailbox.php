@@ -81,7 +81,7 @@ require_once("../db.php");
                   <div class="col-md-12">
                     <div class="box box-primary">
                       <div class="box-header with-border">
-                        <h3 class="box-title" style="margin-bottom: 20px;">Inbox</h3>
+                      <p class="box-title text-bold fs-1" style="margin-bottom: 20px;">Inbox</p>
                         <div class="pull-right">
                           <a href="create-mail.php" class="btn btn-warning btn-flat"><i class="fa fa-envelope"></i> Create</a>
                         </div>
@@ -107,18 +107,19 @@ require_once("../db.php");
                                 $rownum=1;
                                 while ($row = $result->fetch_assoc()) {
                               ?>
-                                  <tr>
+                                  
                                     <?php
+                                      echo "<tr onclick=\"window.location='read-mail.php?id_mail=".$row['id_mailbox']."'\">";
                                       if($row['fromuser'] == 'company'){
                                         $sql1 = "SELECT * From company WHERE id_company='$row[id_fromuser]'";
                                         $result1 = $conn->query($sql1);
-                                        $useremail="";
+                                        $username="";
                                         while ($row1 = $result1->fetch_assoc()) {
-                                            $useremail = $row1['email'];
+                                            $username = $row1['companyname'];
                                         }
                                         echo "<td>".$rownum."</td>";
                                         $rownum = $rownum+1;
-                                        echo "<td class='mailbox-subject'>".$useremail."</td>";
+                                        echo "<td class='mailbox-subject'>".$username."</td>";
                                       ?>
                                     <td class="mailbox-subject"><a href="read-mail.php?id_mail=<?php echo $row['id_mailbox']; ?>"><?php echo $row['subject']; ?></a></td>
                                     <td class="mailbox-date"><?php echo date("d-M-Y h:i a", strtotime($row['createdAt'])); ?></td>
@@ -151,7 +152,7 @@ require_once("../db.php");
                   <div class="col-md-12">
                     <div class="box box-primary">
                       <div class="box-header with-border">
-                        <h3 class="box-title" style="margin-bottom: 20px;">Outbox</h3>
+                        <p class="box-title text-bold fs-1" style="margin-bottom: 20px;">Outbox</p>
                        
                         <!-- /.box-tools -->
                       </div>
@@ -175,18 +176,19 @@ require_once("../db.php");
                                 $rownum=1;
                                 while ($row = $result->fetch_assoc()) {
                               ?>
-                                  <tr>
+                                  
                                     <?php
+                                      echo "<tr onclick=\"window.location='read-mail.php?id_mail=".$row['id_mailbox']."'\">";
                                       if($row['fromuser'] == 'user'){
                                         $sql1 = "SELECT * From company WHERE id_company='$row[id_fromuser]'";
                                         $result1 = $conn->query($sql1);
-                                        $useremail="";
+                                        $username="";
                                         while ($row1 = $result1->fetch_assoc()) {
-                                            $useremail = $row1['email'];
+                                            $username = $row1['companyname'];
                                         }
                                         echo "<td>".$rownum."</td>";
                                         $rownum = $rownum+1;
-                                        echo "<td class='mailbox-subject'>".$useremail."</td>";
+                                        echo "<td class='mailbox-subject'>".$username."</td>";
                                       ?>
                                     <td class="mailbox-subject"><a href="read-mail.php?id_mail=<?php echo $row['id_mailbox']; ?>"><?php echo $row['subject']; ?></a></td>
                                     <td class="mailbox-date"><?php echo date("d-M-Y h:i a", strtotime($row['createdAt'])); ?></td>
