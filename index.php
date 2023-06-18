@@ -12,21 +12,22 @@ require_once("db.php");
 <title>Home</title>
 <style>
     .banner {
-      background-image: url('assets/img/banner-sec1.jpg');
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      /* color: #FFFFFF; */
-      color: #02A2BD;
-      font-size: 24px;
-      text-align: center;
-      position: relative;
-      text-weight: bold;
-      
-    }
+        background-image: url(assets/img/banner-sec1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* color: #FFFFFF; */
+    color: #02A2BD;
+    font-size: 24px;
+    text-align: center;
+    position: relative;
+    text-weight: bold;
+    margin-top: 62px;
+    width: 100%;
+}
 </style>
 
 <head>
@@ -41,7 +42,7 @@ require_once("db.php");
     ?>
     <!-- header ends -->
     <div class="banner">
-        <h1 style="absolute; top: 10px;">Unlock Off Campus Opportunities</h1>
+      
     </div>
     <section id="hero-animated" class="hero-animated d-flex align-items-center">
         <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative" data-aos="zoom-out">
@@ -201,7 +202,7 @@ require_once("db.php");
                             <div class="row">
                                 <div class="col-lg-3 col-xs-6">
                                     <!-- small box -->
-                                    <div class="small-box bg-aqua">
+                                    <div class="small-box box-1">
                                         <div class="inner">
                                             <?php
                                             $sql = "SELECT * FROM job_post";
@@ -226,7 +227,7 @@ require_once("db.php");
                                 <!-- ./col -->
                                 <div class="col-lg-3 col-xs-6">
                                     <!-- small box -->
-                                    <div class="small-box bg-green">
+                                    <div class="small-box box-2" >
                                         <div class="inner">
                                             <?php
                                             $sql = "SELECT * FROM company WHERE active='1'";
@@ -251,7 +252,7 @@ require_once("db.php");
                                 <!-- ./col -->
                                 <div class="col-lg-3 col-xs-6">
                                     <!-- small box -->
-                                    <div class="small-box bg-yellow">
+                                    <div class="small-box box-3">
                                         <div class="inner">
                                             <?php
                                             $sql = "SELECT * FROM users WHERE resume!=''";
@@ -276,7 +277,7 @@ require_once("db.php");
                                 <!-- ./col -->
                                 <div class="col-lg-3 col-xs-6">
                                     <!-- small box -->
-                                    <div class="small-box bg-red">
+                                    <div class="small-box box-4">
                                         <div class="inner">
                                             <?php
                                             $sql = "SELECT * FROM users WHERE active='1'";
